@@ -1,10 +1,14 @@
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
 header,
 main {
   margin: 23vw;
   margin-top: 2vw;
   margin-bottom: 2vw;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
 }
 
 .headerLogo {
@@ -14,6 +18,7 @@ main {
 
 .sottoLogo {
   background-color: #f7f0cd;
+  border-top: 1px solid #ffd977;
   padding: 2%;
   font-size: 0.8em;
 }
