@@ -1,6 +1,45 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("assets/img/sfondo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-width: 1px;
+    border-style: solid;
+    border-color:red;
+    margin: 50px;
+}
+
+#siContent {
+    display: inline-block;
+    width: 80%;
+}
+
 #logo-h1 {
     width: 250px;
     height: 60px;
+}
+
+header 
+
+nav a {
+    text-transform: uppercase;
+}
+
+nav a:link {
+    text-decoration: none;
+}
+
+.code {
+    padding: 1px;
+    background-color: #EEDDE0;
+    border-radius: 5px;
+    border: 1px solid #908E8F;
 }
 
 table {
