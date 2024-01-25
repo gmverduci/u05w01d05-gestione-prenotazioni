@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+header,
+main {
+  margin: 23vw;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+video {
+  width: 100%;
+}
+.headerLogo {
+  width: 50%;
+  margin: auto;
+}
+
+.sottoLogo {
+  background-color: #f7f0cd;
+  border-top: 1px solid #ffd977;
+  padding: 2%;
+  font-size: 0.8em;
+}
+
+.dropMenu {
+  text-transform: uppercase;
+}
+
+picture img {
+  width: 100%;
+  align-items: center;
+}
+
+.mainText {
+  text-align: left;
+}
+
+.featured {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  border-left: 1px solid #ffd977;
+  padding-left: 5%;
+  text-decoration: none;
+}
+
+figcaption {
+  color: #999999;
+  padding-top: 1%;
+  font-size: 0.7em;
+}
+
+.featuredText1 {
+  color: #b5460f;
+  text-decoration: none;
+}
+
+.featuredText2 {
+  color: #117777;
+}

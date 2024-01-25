@@ -11,6 +11,10 @@ main {
   margin-bottom: 2vw;
 }
 
+video {
+  width: 100%;
+}
+
 .headerLogo {
   width: 50%;
   margin: auto;
