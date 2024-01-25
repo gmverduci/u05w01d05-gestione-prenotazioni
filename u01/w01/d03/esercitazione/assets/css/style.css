@@ -2,27 +2,32 @@ body {
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    color: #333;
 }
 
-header,
 main {
-  margin: 23vw;
-  margin-top: 2vw;
-  margin-bottom: 2vw;
+  text-align: center;
+}
+
+
+.mainContent {
+    width: 50%;
+    margin: 1rem 0;
+}
+
+#logo {
+  width: 30%;
 }
 
 video {
   width: 100%;
 }
-.headerLogo {
-  width: 50%;
-  margin: auto;
-}
+
 
 .sottoLogo {
   background-color: #f7f0cd;
   border-top: 1px solid #ffd977;
-  padding: 2%;
+  padding: 1%;
   font-size: 0.8em;
 }
 
