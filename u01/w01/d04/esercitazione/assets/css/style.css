@@ -6,56 +6,85 @@ html, body {
 }
 
 body {
-    background: url("assets/img/sfondo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    border-width: 1px;
-    border-style: solid;
-    border-color:red;
-    margin: 50px;
+  background-image: url(/u01/w01/d04/esercitazione/assets/img/sfondo.png);
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: 'Poppins', sans-serif;
 }
 
-#siContent {
-    display: inline-block;
-    width: 80%;
+.siContent {
+  display: inline-block;
+  width: 75vw;
+  padding: 2em 1em;
+  margin: 1em;
+  box-shadow: -3px 7px 20px #464547, 3px 7px 20px #464547;
+}
+
+header {
+  background-image: linear-gradient(#0499BB, #016688);
 }
 
 #logo-h1 {
-    width: 250px;
-    height: 60px;
+  width: 70%;
 }
 
-header 
+header nav a {
+  text-transform: uppercase;
+  color: white;
+}
 
-nav a {
-    text-transform: uppercase;
+nav p {
+    line-height: 0.2;
 }
 
 nav a:link {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.sottoLogo img {
+  margin-bottom: 1.5em;
+}
+
+.sottoLogo p {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 2.5em;
+}
+
+main {
+  background-color: #FFFFFF;
+  text-align: left;
 }
 
 .code {
-    padding: 1px;
-    background-color: #EEDDE0;
-    border-radius: 5px;
-    border: 1px solid #908E8F;
+  padding: 1px;
+  background-color: #eedde0;
+  border-radius: 5px;
+  border: 1px solid #908e8f;
+}
+
+caption {
+  font-weight: 600;
+  font-style: italic;
 }
 
 table {
-    border: 1px solid black;
-    border-collapse: collapse;
+  border-collapse: collapse;
+  font-weight: 200;
+  font-size: 1em;
+  text-align: center;
 }
 
-th, td {
-    border: 1px solid black;
+th,
+td {
+  border: 1px solid black;
 }
 
 #corr-2 {
-    padding-top: 1px;
+  padding-top: 1px;
 }
 
 #corr-3 {
-    padding-top: 1px;
-    padding-bottom: 3px;
+  padding-top: 1px;
+  padding-bottom: 3px;
 }
