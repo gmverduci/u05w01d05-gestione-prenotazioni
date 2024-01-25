@@ -1,34 +1,35 @@
 body {
-    margin: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    color: #333;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  color: #333;
 }
 
-main {
+.mainContent {
+  width: 50%;
+  margin: auto;
   text-align: center;
 }
 
-
-.mainContent {
-    width: 50%;
-    margin: 1rem 0;
-}
-
 #logo {
-  width: 30%;
+  width: 20%;
 }
 
 video {
   width: 100%;
 }
 
-
 .sottoLogo {
   background-color: #f7f0cd;
   border-top: 1px solid #ffd977;
   padding: 1%;
-  font-size: 0.8em;
+  font-size: 0.7em;
+}
+
+hr {
+  height: 1px;
+  color: #4feeee;
+  background-color: #4feeee;
 }
 
 .dropMenu {
@@ -45,10 +46,13 @@ picture img {
 }
 
 .featured {
+  background-color: #f7f0cd;
+  border-top: 1px solid #ffd977;
   margin-top: 5%;
   margin-bottom: 10%;
   border-left: 1px solid #ffd977;
   padding-left: 5%;
+  padding-bottom: 1%;
   text-decoration: none;
 }
 
