@@ -29,17 +29,23 @@ header {
   width: 70%;
 }
 
+header p {
+  font-size: 2em;
+}
+
 header nav a {
   text-transform: uppercase;
   color: white;
 }
 
 nav p {
+
   line-height: 0.2;
 }
 
-nav a:link {
+nav a:link, nav a:visited {
   text-decoration: none;
+  color: white;
 }
 
 .sottoLogo img {
