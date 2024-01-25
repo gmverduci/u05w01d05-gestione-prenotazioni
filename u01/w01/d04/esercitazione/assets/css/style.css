@@ -1,27 +1,28 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    box-sizing: border-box;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 body {
-  background-image: url(/u01/w01/d04/esercitazione/assets/img/sfondo.png);
+  background-image: url(../img/sfondo.png);
   background-repeat: repeat-y;
   background-size: contain;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .siContent {
   display: inline-block;
-  width: 75vw;
+  width: 85vw;
   padding: 2em 1em;
   margin: 1em;
   box-shadow: -3px 7px 20px #464547, 3px 7px 20px #464547;
 }
 
 header {
-  background-image: linear-gradient(#0499BB, #016688);
+  background-image: linear-gradient(#0499bb, #016688);
 }
 
 #logo-h1 {
@@ -34,7 +35,7 @@ header nav a {
 }
 
 nav p {
-    line-height: 0.2;
+  line-height: 0.2;
 }
 
 nav a:link {
@@ -52,7 +53,7 @@ nav a:link {
 }
 
 main {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   text-align: left;
 }
 
@@ -61,6 +62,10 @@ main {
   background-color: #eedde0;
   border-radius: 5px;
   border: 1px solid #908e8f;
+}
+
+.table {
+  margin: auto;
 }
 
 caption {
@@ -78,6 +83,10 @@ table {
 th,
 td {
   border: 1px solid black;
+}
+
+iframe {
+  border-radius: 25px;
 }
 
 #corr-2 {
