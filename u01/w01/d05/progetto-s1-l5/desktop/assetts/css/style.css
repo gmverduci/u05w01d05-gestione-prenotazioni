@@ -24,12 +24,12 @@ h2 {
 }
 
 h3 {
-    font-size: 1.3em;
+    font-size: 1em;
     margin-bottom: 0;
 }
 
 h4 {
-    font-size: 1em;
+    font-size: 0.8em;
     margin-bottom: 0;
     margin-top: 1em;
 }
@@ -53,7 +53,8 @@ h3 ~ p {
 .section5Content,
 .section6Content,
 aside {
-    padding: 5em 12em;
+    padding: 5em 3em;
+    text-align: center;
 }
 
 .section1 {
@@ -86,6 +87,7 @@ aside {
 .section2Img, .section2Container {
     display: inline-block;
     width: 40%;
+    margin: auto;
 }
 
 .section2-2, .section2-2 p:last-child, .section2Img {
@@ -106,6 +108,7 @@ aside {
     padding: 1.8em;
     color: white;
     margin-bottom: 3em;
+    text-align: center;
 }
 
 .testimonianze q {
@@ -148,7 +151,12 @@ main {
 .scheda1, .scheda2, .scheda3 {
     border: 1px solid #DDDDDD;
     border-radius: 2% 2% 2% 2% / 2% 2% 2% 2%;
-    margin-bottom: 2em;
+    display: inline-block;
+    width: 30%;
+}
+
+.scheda1 img, .scheda2 img, .scheda3 img {
+    height: 10em;
 }
 
 .scheda1:hover, .scheda2:hover, .scheda3:hover {
@@ -159,6 +167,10 @@ main {
     font-size: 0.8em;
     color: black;
     padding-bottom: 2em;
+}
+
+footer {
+    text-align: center;
 }
 
 .contatti {
