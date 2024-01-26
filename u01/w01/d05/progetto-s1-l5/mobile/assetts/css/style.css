@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.65;
+}
+
+h1, h2, h3, h4, .anchor p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #25a2c3;
+    line-height: 1.5;
+}
+
+.headerLogo {
+    background-color: black;
+    padding: 1em;
+}
+
+.headerLogo img {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.section1 {
+    background-image: url("../img/banner.jpg");
+    background-size: contain;
+    padding: 2em;
+}
+
+.section1 h1 {
+    font-size: 2em;
+    line-height: 1;
+}
+
+.anchor {
+    display: inline-block;
+    background-color: #f04c2f;
+    padding: 0 1em;
+    border-radius: 0.3em;
+    margin: 1em auto;
+}
+
+.anchor p {
+    margin: 0.8em 1em;
+    text-transform: uppercase;
+    color: white;
+}
