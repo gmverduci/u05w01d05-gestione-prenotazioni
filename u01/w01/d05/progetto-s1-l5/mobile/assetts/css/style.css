@@ -86,8 +86,11 @@ aside {
     margin-bottom: 2em;
 }
 
+.section2Img {
+    margin: 0 auto;
+}
 .section2Img img {
-    margin: auto;
+    margin:  auto;
     border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
 }
 
@@ -97,6 +100,7 @@ aside {
 
 .testimonianze {
     background-color: #e22d0e;
+    margin: 0;
     padding: 1.8em;
     color: white;
     margin-bottom: 3em;
@@ -122,9 +126,10 @@ aside {
     margin-bottom: 0;
 }
 
-.testimonianze p:last-child {
+.cite p:last-child {
     margin-bottom: 1em;
     font-size: 0.8em;
+    font-style: normal;
 }
 
 .scheda1 img, .scheda2 img, .scheda3 img {
@@ -135,8 +140,8 @@ aside a:any-link {
     text-decoration: none;
 }
 
-main {
-    margin-bottom: 3em;
+aside {
+    margin-bottom: 1em;
 }
 
 .scheda1, .scheda2, .scheda3 {

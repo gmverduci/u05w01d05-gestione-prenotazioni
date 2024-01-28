@@ -47,7 +47,7 @@
               vogliono arricchire il CV, tu pensa ad arricchire le tue
               competenze.
             </p>
-            <a href="#footer">
+            <a href="#contatti">
               <div class="anchor"><p>partiamo!</p></div></a
             >
           </div>
@@ -64,12 +64,13 @@
             <h3>Lavora dove vuoi</h3>
             <p>Lavora da casa, in riva al mare o in montagna.</p>
           </div>
-          <div class="section2Img">
+          <figure class="section2Img">
             <img
               src="assetts/img/notebook.jpg"
               alt="MacBook e iPhone: gli strumenti indispensabili per un Web Developer"
+              class="macbook"
             />
-          </div>
+          </figure>
           <div class="section2-3">
             <h3>Scegli il tuo ruolo</h3>
             <p>Potrai scegliere se essere Azienda, Freelance o Startup</p>
@@ -83,19 +84,19 @@
           </div>
         </section>
         <section class="section3Content">
-          <div class="testimonianze">
+          <blockquote class="testimonianze">
             <h2>Epicode garantisce</h2>
-            <!-- Qui di seguito utilizzo il tag <q> perché cercando sia <cite> che <blockquote> su W3C vedo che entrambi necessitano della citazione di un'opera o comunque di una fonte esterna. Invece <q> ha anche il vantaggio semantico di essere renderizzato in modo diverso a seconda delle impostazioni del browser nei vari paesi (ad esempio in Giappone la citazione potrebbe risultare tra apici invece che tra caporali se in quel paese si usa così). -->
             <q
               >3 mesi intensivi di corso che cambieranno radicalmente la tua
               vita</q
             >
+            <cite class="cite">
             <h3>Mario Rossi</h3>
-            <p>CEO, Epicode</p>
-          </div>
+            <p>CEO, Epicode</p></cite>
+          </blockquote>
         </section>
+      </main>
       </article>
-      <!-- La parte seguente l'ho interpretata come un <aside> in quanto le tre schede mi danno l'idea di 3 articoli correlati, che  linkano ad altre aree del sito. In ordine potrebbero essere: scheda 1 con link a una pagina che spiega l'hardware utilizzato dagli sviluppatori; scheda 2 con link a una pagina dedicata al networking con ex allievi Epicode (quindi con relativi profili, link LinkedIn ecc.); scheda 3 con link a una pagina che indica le aziende convenzionate con Epicode e parla del career coaching. -->
       <aside>
         <section class="scheda1">
           <a href="javascript:void(0)"><div><img src="assetts/img/foto1.jpg" alt="Altri attrezzi del mestiere: occhiali da sole, tazza e spillatrice">
@@ -113,9 +114,8 @@
             <p>Sappiamo cosa vogliono le aziende, perché lavoriamo con loro.</p></div></a>
         </section>
       </aside>
-    </main>
-    <footer id="footer">
-      <section class="contatti">
+    <footer>
+      <section class="contatti" id="contatti">
         <h2>Contattaci</h2>
         <address>
           <p><ion-icon name="call"></ion-icon> <a href="tel:+3911223456">(+39) 11223456</a></p>
