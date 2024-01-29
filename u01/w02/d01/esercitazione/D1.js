@@ -33,7 +33,7 @@ let c2 = 'Un dato è di tipo booleano se può dare come risultato solo vero o fa
 let d = ' Null: ';
 let d2 = 'è un valore nullo, segnala cioè l\'\assenza di un oggetto. Al contrario di 0, che in informatica è il primo dei numeri positivi, indica una mancanza di identificazione e nella logica booleana rappresenta una condizione false. E\'\ utile per identificare problemi di funzionamento degli script. ------';
 
-let e = 'undefined: ';
+let e = ' undefined: ';
 let e2 = 'indica che non è stato assegnato un valore a una variabile. Se ad esempio proviamo a usare una variabile non precedentemente definita otterremo un avviso di undefined.';
 
 let Risposta1 = z + a + a2 + b + b2 + c + c2 + d + d2 + e + e2;
