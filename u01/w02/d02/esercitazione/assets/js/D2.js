@@ -142,13 +142,12 @@ if (a < b && b < c) {
   console.log(b, c, a);
 } else if (c < a && a < b) {
   console.log(c, a, b);
-} else (c < b && b < a) {
+} else {
   console.log(c, b, a);
 }
 
 
 
-/* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
