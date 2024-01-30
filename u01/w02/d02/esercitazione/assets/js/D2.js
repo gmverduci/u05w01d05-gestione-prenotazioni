@@ -142,7 +142,7 @@ if (a < b && b < c) {
   console.log(b, c, a);
 } else if (c < a && a < b) {
   console.log(c, a, b);
-} else if (c < b && b < a) {
+} else (c < b && b < a) {
   console.log(c, b, a);
 }
 
