@@ -5,7 +5,7 @@ document.getElementById("traccia1").innerHTML = traccia1;
 numero1 = window.prompt("Scrivi un numero intero", "0");
 numero2 = window.prompt("Scrivine un altro", "0");*/
 
-let numero1 = 3;
+let numero1 = 30;
 let numero2 = 5;
 
 console.log(numero1, numero2);
@@ -81,12 +81,12 @@ console.log(((numero2Esercizio4 - numero1Esercizio4) === 8) &&
 */
 
 let totalShoppingCart = numero1 * numero2;
-let spedizioneGratuita = "Complimenti, hai diritto alla spedizione gratuita!";
+let spedizioneGratuita = "Complimenti, hai diritto alla spedizione gratuita! Il totale ordine è ";
 let spedizione = 10;
 let spedizione10 = "Il totale da pagare è " + (totalShoppingCart + spedizione);
 
 if (totalShoppingCart >= 50) {
-  console.log(spedizioneGratuita);
+  console.log(spedizioneGratuita + totalShoppingCart);
 } else {
   console.log(spedizione10);
 }
@@ -102,7 +102,7 @@ console.log(totalShoppingCart20);
 let spedizione20 = "Il totale da pagare è " + (totalShoppingCart20 + spedizione);
 
 if (totalShoppingCart20 > 50) {
-  console.log(spedizioneGratuita);
+  console.log(spedizioneGratuita + totalShoppingCart20);
 } else {
   console.log(spedizione20);
 }
@@ -153,6 +153,19 @@ if (a < b && b < c) {
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
 */
 
+let x = 9;
+
+if (typeof x === 'string') {
+  console.log('x è una stringa')
+} else if (typeof x === 'number') {
+  console.log('x è un numero')
+} else if (typeof x === 'true' || typeof x === 'false') {
+  console.log('x è un dato booleano')
+} else if (typeof x === 'undefined') {
+  console.log('x è un valore indefinito')
+} else {console.log('x = null')};
+
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -160,54 +173,78 @@ if (a < b && b < c) {
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
+if (x % 2 !== 0) {
+  console.log('Numero dispari!');
+} else {console.log('Numero pari!')};
+
 
 /* ESERCIZIO 10
   Modifica la logica del seguente algoritmo in modo che mostri in console il messaggio corretto in ogni circostanza.
-  let val = 7
-  if (val < 10) {
-      console.log("Meno di 10");
-    } else if (val < 5) {
+*/
+
+
+  let val = 11
+  if (val < 5) {
       console.log("Meno di 5");
+    } else if (val < 10) {
+      console.log("Meno di 10");
     } else {
       console.log("Uguale a 10 o maggiore");
     }
-*/
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 11
   Fornito il seguente oggetto, scrivi del codice per aggiungere una proprietà "city", il cui valore sarà "Toronto".
 */
 
-/*const me = {
+const me = {
   name: "John",
   lastName: "Doe",
   skills: ["javascript", "html", "css"],
-};*/
+};
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+me.city = 'Toronto';
+
+console.log(me, me.skills);
+
+
 
 /* ESERCIZIO 12
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+delete me.lastName;
+console.log(me, me.skills);
+
 
 /* ESERCIZIO 13
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+/*delete me.skills[2];
+console.log(me, me.skills);
+il metodo delete non va bene per rimuovere un elemento da un array: lo cancella ma non elimina l'elemento, che rimane vuoto!*/
+
+me.skills.length = 2;
+console.log(me.skills);
+
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const dieci = [];
+dieci.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+console.log(dieci);
+
+
+
 
 /* ESERCIZIO 15/=
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+dieci.splice(9, 1, 100);
+console.log(dieci);
