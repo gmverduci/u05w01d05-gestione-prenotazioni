@@ -119,31 +119,31 @@ let c = 3;
 
 
 if ((a < c) && (b < c)) {
-  console.log(a, b, c);
-} else if ((a < c) && (c < b)) {
-  console.log(b, a, c);
-} else if ((b < a) && (a < c)) {
-  console.log(b, a, c);
-} else if ((b < c) && (c < a)) {
-  console.log(b, c, a);
-} else if ((c < b) && (b < a)) {
   console.log(c, b, a);
-} else {
+} else if ((a < c) && (c < b)) {
+  console.log(a, a, b);
+} else if ((b < a) && (a < c)) {
   console.log(c, a, b);
+} else if ((b < c) && (c < a)) {
+  console.log(a, c, b);
+} else if ((c < b) && (b < a)) {
+  console.log(a, b, c);
+} else {
+  console.log(b, a, c);
 }
 
 if (a < b && b < c) {
-  console.log(a, b, c);
-}  else if (a < c && c < b) {
-  console.log(a, c, b);
-} else if (b < a && a < c) {
-  console.log(b, a, c);
-} else if (b < c && c < a) {
-  console.log(b, c, a);
-} else if (c < a && a < b) {
-  console.log(c, a, b);
-} else {
   console.log(c, b, a);
+}  else if (a < c && c < b) {
+  console.log(b, c, a);
+} else if (b < a && a < c) {
+  console.log(c, a, b);
+} else if (b < c && c < a) {
+  console.log(a, c, b);
+} else if (c < a && a < b) {
+  console.log(b, a, c);
+} else {
+  console.log(a, b, c);
 }
 
 
@@ -155,15 +155,9 @@ if (a < b && b < c) {
 
 let x = 9;
 
-if (typeof x === 'string') {
-  console.log('x è una stringa')
-} else if (typeof x === 'number') {
+if (typeof x === 'number') {
   console.log('x è un numero')
-} else if (typeof x === 'true' || typeof x === 'false') {
-  console.log('x è un dato booleano')
-} else if (typeof x === 'undefined') {
-  console.log('x è un valore indefinito')
-} else {console.log('x = null')};
+} else {console.log('x non è un numero')}
 
 
 
@@ -175,8 +169,8 @@ if (typeof x === 'string') {
 
 
 if (x % 2 !== 0) {
-  console.log('Numero dispari!');
-} else {console.log('Numero pari!')};
+  console.log(x + ' è un numero dispari!');
+} else {console.log(x + ' è un numero pari!')};
 
 
 /* ESERCIZIO 10
@@ -227,7 +221,7 @@ console.log(me, me.skills);
 console.log(me, me.skills);
 il metodo delete non va bene per rimuovere un elemento da un array: lo cancella ma non elimina l'elemento, che rimane vuoto!*/
 
-me.skills.length = 2;
+me.skills.length = 2; // ALTRIMENTI: me.skills.pop() ELIMINA L'ULTIMO ELEMENTO DALL'ARRAY
 console.log(me.skills);
 
 
