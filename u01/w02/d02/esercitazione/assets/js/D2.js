@@ -242,3 +242,5 @@ console.log(dieci);
 
 dieci.splice(9, 1, 100);
 console.log(dieci);
+
+// PIU' SEMPLICEMENTE: dieci[9] = 100;
