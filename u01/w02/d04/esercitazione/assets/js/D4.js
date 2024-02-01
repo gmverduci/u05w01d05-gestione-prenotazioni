@@ -84,7 +84,7 @@ function epify (string) {
     if (string.indexOf(epic) === 0) {
         return string;
     } 
-    else return epic + ' ' + string; 
+    else return epic + string; 
 }
 
 
@@ -162,7 +162,7 @@ document.getElementById("esercizio6").innerText = risultatoReverseString;
 let atagliar = 'infondoalmare';
 
 
-function cutString (daTagliare) {
+function cutString (daTagliare = '') {
     let daTagliare1 = daTagliare.slice(1, -1);
     return daTagliare1;
 }
@@ -187,7 +187,7 @@ function giveMeRandom (paramRand) {
 }
 
 
-risultatoGiveMeRandom = giveMeRandom(10);
+risultatoGiveMeRandom = giveMeRandom(Math.floor(Math.random() * 10));
 
 document.getElementById("esercizio10").innerText = risultatoGiveMeRandom;
 
