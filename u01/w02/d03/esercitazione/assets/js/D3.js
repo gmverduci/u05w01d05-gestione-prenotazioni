@@ -239,15 +239,20 @@ console.log(starWarsCharacters);
 
 console.log(charactersNames);
 
-for (let i = 0; i < charactersNames.length; i++) {
+for (let i = 0; i < characters.length; i++) {
+  const character = characters[i];
+
   for (let j = 0; j < femaleCharacters.length; j++) {
-    if (femaleCharacters[j].name === charactersNames[i]) {
-      charactersNames.splice(i, 1);
+    const femCharacter = femaleCharacters[j];
+
+    if (femCharacter.name === character) {
+      console.log("FEMALE", character);
+      characters.splice(i, 1);
     }
   }
 }
 
-console.log(charactersNames);
+console.log("CHARACTERS AFTER", characters.length);
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
