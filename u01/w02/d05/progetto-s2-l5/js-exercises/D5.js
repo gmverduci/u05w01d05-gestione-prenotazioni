@@ -203,7 +203,7 @@ stampaNumeric();
 
 const charactersArray = ["g", "n", "u", "z", "d"];
 const newArray = [];
-const alfabeto = [
+const alfabetoInformatico = [
   0,
   "a",
   "b",
@@ -235,9 +235,9 @@ const alfabeto = [
 
 function alfabeticArray() {
   for (let i = 0; i < charactersArray.length; i++) {
-    for (let x = 0; x < alfabeto.length; x++) {
+    for (let x = 0; x < alfabetoInformatico.length; x++) {
       switch (true) {
-        case charactersArray[i] === alfabeto[x]:
+        case charactersArray[i] === alfabetoInformatico[x]:
           newArray.push(x);
           break;
       }
