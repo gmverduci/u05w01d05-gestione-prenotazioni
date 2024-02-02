@@ -117,7 +117,7 @@ for (i=0; i<cars.length; i++) {
 function esercizio6() {
   cars.push({brand: 'Fiat', model: 'Uno', color: 'white', trims: ['rapine', 'sequestri', 'speronamenti']});
   for (i=0; i<cars.length; i++) {
-    cars[i].trims.pop();
+    cars[i].trims.push();
 } return;
 }
 
