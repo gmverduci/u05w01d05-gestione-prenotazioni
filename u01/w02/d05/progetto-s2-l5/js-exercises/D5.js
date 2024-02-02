@@ -242,7 +242,7 @@ function alfabeticArray() {
           break;
       }
     }
-  }
+  } return;
 }
 
 console.log("ESERCIZIO 10");
