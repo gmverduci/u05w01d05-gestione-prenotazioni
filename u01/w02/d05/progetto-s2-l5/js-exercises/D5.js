@@ -57,12 +57,10 @@ ordineReverse();
     Scrivi del codice per spostare il primo elemento dall'array "pets" in ultima posizione.
 */
 
-console.log(pets);
 
 function primoUltimo() {
-  pets.push(pets[0]);
-  pets.shift();
-  return;
+  pets.push(pets.shift());
+    return;
 }
 
 console.log("ESERCIZIO 4");
@@ -129,15 +127,18 @@ function esercizio6() {
     color: "white",
     trims: ["rapine", "sequestri", "speronamenti"],
   });
+  for (let i = 0; i < cars.length; i++) {
+    cars[i].trims.pop();
+    console.log(cars[i].trims);
+  };
   return;
 }
 
 console.log("ESERCIZIO 6");
 esercizio6();
 
-for (i = 0; i < cars.length; i++) {
-  console.log(cars[i].trims);
-}
+
+
 
 /* ESERCIZIO 7
     Scrivi del codice per salvare il primo elemento della proprietà "trims" di ogni auto nel nuovo array "justTrims", sotto definito.
