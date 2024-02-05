@@ -3,7 +3,7 @@ REGOLE
 - Tutte le risposte devono essere scritte in JavaScript
 - Puoi usare Google / StackOverflow ma solo quanto ritieni di aver bisogno di qualcosa che non è stato spiegato a lezione
 - Puoi testare il tuo codice in un file separato, o de-commentando un esercizio alla volta
-- Per visualizzare l'output, lancia il file HTML a cui è collegato e apri la console dagli strumenti di sviluppo del browser. 
+- Per visualizzare l'output, lancia il file HTML a cui è collegato e apri la console dagli strumenti di sviluppo del browser 
 - Utilizza dei console.log() per testare le tue variabili e/o i risultati delle espressioni che stai creando.
 */
 
@@ -248,4 +248,5 @@ function alfabeticArray() {
 
 console.log("ESERCIZIO 10");
 alfabeticArray();
-console.log(newArray);
+for (let i = 0; i < newArray.length; i++) {
+  console.log(newArray[i])};
