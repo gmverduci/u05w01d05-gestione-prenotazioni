@@ -129,10 +129,20 @@ revealFooterLink();
         La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
      */
 
-const generateTable = function (contenutoRiga1, contenutoRiga2, contenutoRiga3, contenutoRiga4) {
+const generateTable = function (
+  contenutoRiga1,
+  contenutoRiga2,
+  contenutoRiga3,
+  contenutoRiga4
+) {
   const tableArea = document.getElementById("tableArea");
   const tabella = document.createElement("table");
-  const intestazione = [contenutoRiga1, contenutoRiga2, contenutoRiga3, contenutoRiga4];
+  const intestazione = [
+    contenutoRiga1,
+    contenutoRiga2,
+    contenutoRiga3,
+    contenutoRiga4,
+  ];
   const creaIntestazione = tabella.insertRow();
   tableArea.appendChild(tabella);
 
@@ -141,7 +151,7 @@ const generateTable = function (contenutoRiga1, contenutoRiga2, contenutoRiga3, 
     titolo.textContent = intestazione[i];
     creaIntestazione.appendChild(titolo);
   }
-}
+};
 
 generateTable("Immagine", "Nome Prodotto", "Quantità", "Prezzo");
 
@@ -161,4 +171,41 @@ const hideAllImages = function () {};
        Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
      */
 
-const changeColorWithRandom = function () {};
+const coloreH2Casuale = function () {
+  const h2Originale = document.getElementById("changeMyColor");
+
+  const alfabetoColori = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+  ];
+
+  const coloreRandom = () => {
+    let nuovoColore = "#";
+    for (let i = 0; i < 6; i++) {
+      nuovoColore +=
+        alfabetoColori[Math.floor(Math.random() * alfabetoColori.length)];
+    }
+    return nuovoColore;
+  };
+
+  h2Originale.addEventListener("click", function () {
+    // h2Originale.style.color = coloreRandom(); METODO SENZA INTERPOLAZIONE
+    h2Originale.setAttribute(`style`, `color: ${coloreRandom()}`);
+  });
+};
+
+coloreH2Casuale();
