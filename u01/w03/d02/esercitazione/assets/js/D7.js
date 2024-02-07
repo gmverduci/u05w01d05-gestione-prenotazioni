@@ -232,9 +232,9 @@ const movies = [
 
 const trovaFilmPiuVecchio = (film) => {
   let filmPiuVecchio = film[Math.floor(Math.random() * film.length)];
-  film.forEach((filmInEsame) => {
-    if (filmInEsame.Year < filmPiuVecchio.Year) {
-      filmPiuVecchio = filmInEsame;
+  film.forEach((element) => {
+    if (Number(element.Year) < Number(filmPiuVecchio.Year)) {
+      filmPiuVecchio = element;
     }
   });
   return filmPiuVecchio;
@@ -247,9 +247,24 @@ console.log(`${filmPiuVecchio.Title} del ${filmPiuVecchio.Year}`);
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 
+const contaFilm = () => {
+  console.log(movies.length);
+};
+
+contaFilm();
+
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+
+const trovaTitoli = () => {
+  const titoliFilm = movies.map((element) => {
+    return element.Title;
+  });
+  return titoliFilm;
+};
+
+console.log(trovaTitoli(movies));
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
@@ -258,6 +273,15 @@ console.log(`${filmPiuVecchio.Title} del ${filmPiuVecchio.Year}`);
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+let sommaYears;
+const sommaAnni = () => {
+  return movies.reduce((sommaYears, element) => {
+    return sommaYears += Number(element.Year);
+  }, 0);
+};
+
+console.log(sommaAnni());
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
@@ -284,9 +308,13 @@ document.getElementById("scegli").addEventListener("click", function () {
     return element.imdbID === imdbID;
   });
   document.getElementById("titolo").innerText = filmScelto.Title;
-  document.getElementById("anno").innerText = `Anno di produzione: ${filmScelto.Year}`;
-  document.getElementById("locandina").innerHTML = `<img src="${filmScelto.Poster}" alt="Locandina ${filmScelto.Title}" />`;
-//  document.getElementById("trailer").innerHTML = filmScelto.Trailer; qui bisogna aggiungere Trailer ai vari oggetti dell'array movies
+  document.getElementById(
+    "anno"
+  ).innerText = `Anno di produzione: ${filmScelto.Year}`;
+  document.getElementById(
+    "locandina"
+  ).innerHTML = `<img src="${filmScelto.Poster}" alt="Locandina ${filmScelto.Title}" />`;
+  //  document.getElementById("trailer").innerHTML = filmScelto.Trailer; qui bisogna aggiungere Trailer ai vari oggetti dell'array movies
 });
 
 /* ESERCIZIO 15 (findIndex)
