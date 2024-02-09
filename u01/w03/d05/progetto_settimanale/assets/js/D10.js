@@ -231,7 +231,6 @@ const rollTheDices = (numeroLanci) => {
   let values = [];
 
   for (let i = 0; i < numeroLanci; i++) {
-    // Correzione: cambiato <= con <
     let lancio = dice(
       Math.floor(Math.random() * 10 + 1),
       Math.floor(Math.random() * 10 + 1)
@@ -623,7 +622,7 @@ const svuotaLista = () => {
   myList.innerHTML = "";
 };
 
-svuotaLista();
+svuotaLista("mylist");
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
@@ -675,19 +674,17 @@ halfTree(7);
 
 */
 
-// mi scuso per le variabili non in ordine, ma ora che ha funzionato non voglio rimetterci mano.
-
 const albero = (tronco) => {
-  for (let x = 0; x < tronco; x++) {
+  for (let i = 0; i < tronco; i++) {
     let ramo = "";
 
-    // Creazione degli spazi
-    for (let j = tronco - x; j > 0; j--) {
+    // spazi
+    for (let j = tronco - i; j > 0; j--) {
       ramo += " ";
     }
 
-    // Creazione degli asterischi
-    for (let i = 0; i <= 2 * x; i++) {
+    // palle
+    for (let q = 0; q <= 2 * i; q++) {
       ramo += "*";
     }
 
