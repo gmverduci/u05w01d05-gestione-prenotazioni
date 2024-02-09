@@ -653,16 +653,15 @@ testTr();
 */
 
 const halfTree = (tronco) => {
-  for (let i = 1; i <= tronco; i++) {
-    let ramo = "";
-    for (let j = 0; j < i; j++) {
-      ramo += "*";
-    }
+  let ramo = "";
+  for (let i = 0; i < tronco; i++) {
+    ramo += "*";
+
     console.log(ramo);
   }
 };
 
-halfTree(3);
+halfTree(7);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -676,21 +675,27 @@ halfTree(3);
 
 */
 
+// mi scuso per le variabili non in ordine, ma ora che ha funzionato non voglio rimetterci mano.
+
 const albero = (tronco) => {
-  for (let i = 0; i < tronco; i++) {
+  for (let x = 0; x < tronco; x++) {
     let ramo = "";
-    for (let j = 0; j < tronco - i - 1; j++) {
+
+    // Creazione degli spazi
+    for (let j = tronco - x; j > 0; j--) {
       ramo += " ";
     }
-    for (let q = 0; q < 2 * i + 1; q++) {
+
+    // Creazione degli asterischi
+    for (let i = 0; i <= 2 * x; i++) {
       ramo += "*";
     }
+
     console.log(ramo);
   }
 };
 
 albero(7);
-
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
@@ -710,4 +715,3 @@ const isItPrime = (numero) => {
 };
 
 console.log(numeroRandomConMoltiPrimi, isItPrime(numeroRandomConMoltiPrimi));
-
