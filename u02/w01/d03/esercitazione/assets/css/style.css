@@ -1,0 +1,334 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: #732104;
+}
+
+h4,
+h5 {
+  margin: 0;
+}
+
+h5 {
+  font-weight: normal;
+}
+
+nav,
+main,
+aside {
+  margin: 0 1rem;
+}
+
+nav,
+.card,
+.add-to-cart,
+#news-text,
+footer {
+  background-color: #fef7e2;
+}
+
+/* Border radius */
+
+.nav-btn,
+.card,
+.add-to-cart,
+#news-text,
+#shop-btn {
+  border-radius: 2.5rem;
+}
+
+/* Header */
+
+header {
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+nav {
+  width: 95%;
+  border-radius: 4rem;
+  height: 17rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.nav-btn,
+#shop-btn,
+.add-to-cart {
+  background-color: #ffdf7f;
+}
+
+#shop-btn {
+  height: 30%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shop-btn img {
+  width: 15%;
+  margin-right: 1rem;
+}
+
+.nav-btn {
+  width: 45%;
+}
+
+@media screen and (min-width: 576px) {
+  header {
+    margin-top: -22px;
+  }
+
+  nav {
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    height: 5rem;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .nav-btn {
+    width: 18%;
+    font-size: 0.8rem;
+  }
+
+  #shop-btn img {
+    width: 22%;
+    margin-right: 0.5rem;
+  }
+
+  #shop-btn {
+    order: 2;
+    width: 20%;
+    height: 4.5rem;
+    font-size: 1rem;
+  }
+
+  #nav-btn1 {
+    order: 0;
+  }
+
+  #nav-btn2 {
+    order: 1;
+  }
+
+  #nav-btn3 {
+    order: 3;
+  }
+
+  #nav-btn4 {
+    order: 4;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    height: 100vh;
+    width: 20vw;
+    background-color: #fef7e2;
+  }
+
+  nav {
+    height: 30%;
+    padding-top: 3rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .nav-btn,
+  #shop-btn {
+    width: 90%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #shop-btn {
+    order: 0;
+  }
+}
+
+/* Main */
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+#main-title {
+  padding: 0 2rem;
+  font-weight: bolder;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.text-right {
+  font-size: 1.2rem;
+}
+
+.card-down {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  width: 50%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-down h5 {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 576px) {
+  #main-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #main-title {
+    justify-self: flex-start;
+    padding-left: 0;
+  }
+
+  .card {
+    width: 48%;
+  }
+
+  #card4 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    position: absolute;
+    top: 0;
+    left: 20vw;
+    padding-top: 2.5rem;
+  }
+
+  #main-title {
+    width: 100%;
+    text-align: left;
+  }
+
+  #main-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card {
+    width: 30%;
+  }
+
+  .card-text {
+    font-size: 0.7rem;
+  }
+
+  .card-text h4 {
+    font-size: 0.8rem;
+  }
+
+  .text-right {
+    font-size: 0.9 rem;
+  }
+
+
+  #card3 {
+    display: none;
+  }
+}
+
+/* Aside */
+
+#news-text {
+  padding: 1rem;
+  text-align: left;
+}
+
+aside img {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+aside {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 576px) {
+  #news-title {
+    text-align: left;
+  }
+
+  #news-text p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Footer */
+
+footer {
+  height: 13rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+#footer-container {
+  width: 70%;
+}
+
+#footer-container img {
+  width: 20%;
+}
+
+#footer-container address {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
