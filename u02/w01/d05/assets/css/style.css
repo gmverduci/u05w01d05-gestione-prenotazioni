@@ -395,6 +395,7 @@ aside {
   #main-container {
     display: flex;
     flex-direction: column;
+    height: 100vw;
   }
 
   aside,
@@ -452,6 +453,7 @@ aside {
   #side-article-img {
     width: 40%;
   }
+
 
 }
 
