@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
         } else {
             randomElement.classList.add('hidden');
         }
-    }, 300);
+    }, 140);
 });
 
 
