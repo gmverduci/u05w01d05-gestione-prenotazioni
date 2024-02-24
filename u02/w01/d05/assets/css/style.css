@@ -26,7 +26,7 @@ h5 {
 
 nav {
   border-bottom: 1px solid #191919;
-  font-weight: 300;
+  font-weight: 400;
   top: 0;
   position: sticky;
   z-index: 100000;
@@ -321,6 +321,15 @@ aside {
   font-weight: 300;
   margin-inline-start: 1rem;
 }
+
+.navbar-white {
+    background-color: #FFFFFF; 
+  }
+
+.btn-green {
+    background-color: #1A8917 !important; 
+    color: #FFFFFF !important; 
+  }
 
 @media screen and (max-width: 768px) {
   nav span,
