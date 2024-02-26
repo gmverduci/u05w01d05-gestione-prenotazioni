@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esercitazione U02 W02 D01</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1 class="text-center mb-4">Pratica con il Grid System</h1>
+
+    <div class="container text-center mb-4">
+      <h2>Esercizio 1</h2>
+      <div class="row bg-primary text-white">
+        <div class="col-md-4 p-3 border border-dark">Colonna 1</div>
+        <div class="col-md-4 p-3 border border-dark">Colonna 2</div>
+        <div class="col-md-4 p-3 border border-dark">Colonna 3</div>
+      </div>
+    </div>
+
+    <div class="container-fluid text-center mb-4">
+      <h2>Esercizio 2</h2>
+      <div class="row">
+        <div class="col-12 col-md-4 bg-warning p-3 border border-dark">
+          Colonna 1
+        </div>
+        <div class="col-12 col-md-4 bg-warning p-3 border border-dark">
+          Colonna 1
+        </div>
+        <div class="col-12 col-md-4 bg-warning p-3 border border-dark">
+          Colonna 1
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid text-center mb-4">
+      <h2>Esercizio 3</h2>
+      <div name="xs" class="row">
+        <div class="col-4 bg-success text-white p-3 border border-dark">
+          XS 1
+        </div>
+        <div class="col-4 bg-success text-white p-3 border border-dark">
+          XS 2
+        </div>
+        <div class="col-4 bg-success text-white p-3 border border-dark">
+          XS 3
+        </div>
+      </div>
+      <div name="small" class="row">
+        <div class="col-sm-4 bg-success text-white p-3 border border-dark">
+          S 1
+        </div>
+        <div class="col-sm-4 bg-success text-white p-3 border border-dark">
+          S 2
+        </div>
+        <div class="col-sm-4 bg-success text-white p-3 border border-dark">
+          S 3
+        </div>
+      </div>
+      <div name="medium" class="row">
+        <div class="col-md-4 bg-success text-white p-3 border border-dark">
+          M 1
+        </div>
+        <div class="col-md-4 bg-success text-white p-3 border border-dark">
+          M 2
+        </div>
+        <div class="col-md-4 bg-success text-white p-3 border border-dark">
+          M 3
+        </div>
+      </div>
+      <div name="large" class="row">
+        <div class="col-lg-4 bg-success text-white p-3 border border-dark">
+          L 1
+        </div>
+        <div class="col-lg-4 bg-success text-white p-3 border border-dark">
+          L 2
+        </div>
+        <div class="col-lg-4 bg-success text-white p-3 border border-dark">
+          L 3
+        </div>
+      </div>
+      <div name="xl" class="row">
+        <div class="col-xl-4 bg-success text-white p-3 border border-dark">
+          XL 1
+        </div>
+        <div class="col-xl-4 bg-success text-white p-3 border border-dark">
+          XL 2
+        </div>
+        <div class="col-xl-4 bg-success text-white p-3 border border-dark">
+          XL 3
+        </div>
+      </div>
+      <div name="xxl" class="row">
+        <div class="col-xxl-4 bg-success text-white p-3 border border-dark">
+          XXL 1
+        </div>
+        <div class="col-xxl-4 bg-success text-white p-3 border border-dark">
+          XXL 2
+        </div>
+        <div class="col-xxl-4 bg-success text-white p-3 border border-dark">
+          XXL 3
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid text-center mb-4">
+      <h2>Esercizio 4</h2>
+      <div class="row">
+        <div class="col-lg-3 bg-danger text-white p-3 border border-dark">
+          >= 992px 1
+        </div>
+        <div class="col-lg-6 bg-danger text-white p-3 border border-dark">
+          >= 992px 2
+        </div>
+        <div class="col-lg-3 bg-danger text-white p-3 border border-dark">
+          >= 992px 3
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid text-center mb-4">
+      <h2>Esercizio 5</h2>
+      <div class="row">
+        <div class="col-lg-4 bg-info text-white p-3 border border-dark">1</div>
+        <div class="col-lg-8 bg-info text-white p-3 border border-dark">
+          NESTING
+
+          <div class="container bg-info text-center">
+            <div class="row">
+              <div
+                class="col-lg-6 bg-secondary text-white p-3 border border-dark"
+              >
+                Nesting 1
+              </div>
+              <div
+                class="col-lg-6 bg-secondary text-white p-3 border border-dark"
+              >
+                Nesting 2
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid text-center mb-5">
+      <h2>Esercizio 6</h2>
+      <div class="row justify-content-start">
+        <div class="col-lg-3 bg-dark text-white p-3">Colonna 1 (4 col)</div>
+        <div class="col-lg-3 offset-lg-2 bg-dark text-white p-3">Colonna 2 (4 col + 2 offset)</div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
