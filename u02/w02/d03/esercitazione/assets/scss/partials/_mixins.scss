@@ -1,0 +1,44 @@
+// _mixins.scss
+
+@mixin floating(
+  $border-radius: 5px,
+  $box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2),
+  $border: 1px solid #ddd
+) {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  border: $border;
+}
+
+// griglia
+@mixin grid($columns: 2) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  div {
+    width: calc(100% / #{$columns} - 20px);
+    margin-bottom: 20px;
+  }
+}
+
+// animazione
+@mixin animation($name, $duration: 0.3s, $start: 0, $end: 100%, $delay: 0) {
+  animation: $name $duration $start $end $delay;
+}
+
+@mixin button-styles($color) {
+  padding: $spacing-sm $spacing-md;
+  background-color: $color;
+  color: $color-text-light;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+}
+
+$box-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2); // Valore per il box shadow large
+$box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+

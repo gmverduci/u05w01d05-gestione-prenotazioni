@@ -1,0 +1,41 @@
+
+@import 'colors'; // Importa il file _colors.scss per avere accesso alle variabili dei colori
+@import 'mixins'; // Assicurati che mixins sia importato prima di utilizzarlo
+
+@each $color in ($color-btn-1, $color-btn-2, $color-btn-3) {
+  $color-name: '';
+  @if $color == $color-btn-1 {
+    $color-name: 'blu';
+  } @else if $color == $color-btn-2 {
+    $color-name: 'arancione';
+  } @else if $color == $color-btn-3 {
+    $color-name: 'verde';
+  }
+
+  .btn {
+    &[class*='btn-#{$color-name}'] {
+      @include button-styles($color); 
+      padding: $spacing-sm $spacing-md;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($color, 10%);
+      }
+    }
+  }
+}
+
+.btn-rosso {
+  @include button-styles($color-btn-1);
+}
+
+.btn-blu {
+  @include button-styles($color-btn-2);
+}
+
+.btn-verde {
+  @include button-styles($color-btn-3);
+}
