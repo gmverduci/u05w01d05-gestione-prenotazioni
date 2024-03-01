@@ -1,3 +1,10 @@
-#carousel-items-container img {
-    width: 15% !important;
+.img-hover {
+  transition: transform 1ms, opacity 1ms, filter 1ms;
+  
+}
+
+.img-hover:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  filter: brightness(130%);
 }
