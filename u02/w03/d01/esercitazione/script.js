@@ -253,3 +253,56 @@ clearAllBtn.addEventListener("click", () => {
   clearAllBtn.setAttribute("disabled", true);
   alert("Pet list cleared!");
 });
+
+//Da qui in poi contatore (aggiunto per U02 W03 D02)
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let counter;
+  let currentCount = 0;
+
+  
+  if (sessionStorage.getItem("currentCount")) {
+    currentCount = parseInt(sessionStorage.getItem("currentCount"));
+  }
+
+  function startCounter() {
+    counter = setInterval(() => {
+      currentCount++;
+      updateCounter(currentCount);
+      sessionStorage.setItem("currentCount", currentCount.toString());
+    }, 1000);
+  }
+
+  function stopCounter() {
+    clearInterval(counter);
+    counter = null;
+  }
+
+  function resetCounter() {
+    currentCount = 0;
+    updateCounter(currentCount);
+    sessionStorage.removeItem("currentCount");
+  }
+
+  function updateCounter(value) {
+    const counterElement = document.getElementById("counter");
+    counterElement.textContent = value;
+  }
+
+  const stopButton = document.getElementById("stop-button");
+  stopButton.addEventListener("click", () => {
+    if (counter) {
+      stopCounter();
+    } else {
+      startCounter();
+    }
+  });
+
+  const resetButton = document.getElementById("reset-button");
+  resetButton.addEventListener("click", () => {
+    resetCounter();
+  });
+
+  startCounter();
+});
