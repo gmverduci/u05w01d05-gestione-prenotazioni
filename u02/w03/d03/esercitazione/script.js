@@ -32,10 +32,10 @@ async function getLibrary() {
 function createCard(book) {
   let card = document.createElement("div");
   card.setAttribute("id", `card-${book.asin}`);
-  card.classList.add("card", "mb-4");
+  card.classList.add("card", "mb-4", "h-100");
   card.innerHTML = `
       <img src="${book.img}" class="card-img-top" alt="${book.title}" />
-      <div class="card-body d-flex flex-column p-2">
+      <div class="card-body d-flex flex-column justify-content-between p-2">
         <h5 class="card-title">${book.title}</h5>
         <p class="card-text">€ ${book.price}</p>
         <div class="container-fluid pb-3"><button id="b-${book.asin}" class="btn btn-light btn-outline-primary mt-auto align-self-center">Acquista</button>
@@ -46,25 +46,55 @@ function createCard(book) {
   return card;
 }
 
+// function populateColumns() {
+//   for (let i = 1; i <= 4; i++) {
+//     let col = document.getElementById(`col-${i}`);
+//     for (let x = i - 1; x < library.length; x += 4) {
+//       let book = library[x];
+//       let card = createCard(book);
+//       col.appendChild(card);
+
+//       let btnAcquista = document.getElementById(`b-${book.asin}`);
+//       btnAcquista.addEventListener("click", function () {
+//         addToCart(book.asin);
+//         console.log(cart);
+//       });
+
+//       let btnScarta = document.getElementById(`d-${book.asin}`);
+//       btnScarta.addEventListener("click", function () {
+//         removeCard(`card-${book.asin}`);
+//       });
+//     }
+//   }
+// }
+
 function populateColumns() {
-  for (let i = 1; i <= 4; i++) {
-    let col = document.getElementById(`col-${i}`);
-    for (let x = i - 1; x < library.length; x += 4) {
-      let book = library[x];
+  let container = document.getElementById("books-container");
+
+  for (let i = 0; i < library.length; i += 4) {
+    let row = document.createElement("div");
+    row.classList.add("row", "mt-4");
+
+    for (let j = 0; j < 4 && i + j < library.length; j++) {
+      let col = document.createElement("div");
+      col.classList.add(
+        "col-md-3",
+        "g-2",
+        "align-items-stretch",
+        "d-flex",
+        "flex-column",
+        "flex-wrap",
+        "justify-content-start"
+      );
+
+      let book = library[i + j];
       let card = createCard(book);
+
       col.appendChild(card);
-
-      let btnAcquista = document.getElementById(`b-${book.asin}`);
-      btnAcquista.addEventListener("click", function () {
-        addToCart(book.asin);
-        console.log(cart);
-      });
-
-      let btnScarta = document.getElementById(`d-${book.asin}`);
-      btnScarta.addEventListener("click", function () {
-        removeCard(`card-${book.asin}`);
-      });
+      row.appendChild(col);
     }
+
+    container.appendChild(row);
   }
 }
 
