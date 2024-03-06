@@ -79,12 +79,7 @@ function populateColumns() {
       let col = document.createElement("div");
       col.classList.add(
         "col-md-3",
-        "g-2",
-        "align-items-stretch",
-        "d-flex",
-        "flex-column",
-        "flex-wrap",
-        "justify-content-start"
+        "g-2"
       );
 
       let book = library[i + j];
@@ -92,6 +87,17 @@ function populateColumns() {
 
       col.appendChild(card);
       row.appendChild(col);
+
+      let btnAcquista = card.querySelector(`#b-${book.asin}`);
+      btnAcquista.addEventListener("click", function () {
+        addToCart(book.asin);
+        console.log(cart);
+      });
+
+      let btnScarta = card.querySelector(`#d-${book.asin}`);
+      btnScarta.addEventListener("click", function () {
+        removeCard(`card-${book.asin}`);
+      });
     }
 
     container.appendChild(row);
