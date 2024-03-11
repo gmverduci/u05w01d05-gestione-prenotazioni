@@ -3,6 +3,120 @@ const apiKey =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZDgwMjJkN2IxMTAwMTkwZTZkZGEiLCJpYXQiOjE3MDk4ODk1MzgsImV4cCI6MTcxMTA5OTEzOH0.lxPP1pvzX_otJ2Lm1nttNsifxs64JKd_VW8f3QEVdVg";
 let productsData = [];
 
+/* Actual JSON, to easily appreciate the project as it was developed: 
+
+[
+    {
+        "_id": "65eaede82d7b1100190e708f",
+        "name": "Final Fantasy VII",
+        "description": "Cloud Strife, a former member of Shinra's elite SOLDIER unit now turned mercenary, lends his aid to the rebels, unaware that he will be drawn into an epic battle for the fate of the planet, while having to come to terms with his own lost past.",
+        "brand": "Square-Enix",
+        "imageUrl": "https://m.media-amazon.com/images/I/71350ljw7SL.jpg",
+        "price": 39,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T10:52:24.635Z",
+        "updatedAt": "2024-03-08T10:52:24.635Z",
+        "__v": 0
+    },
+    {
+        "_id": "65eaf4132d7b1100190e714f",
+        "name": "Red Dead Redemption",
+        "description": "Red Dead Redemption is set during the decline of the American frontier in the year 1911. It follows John Marston, a former outlaw who, after his wife and son are taken hostage by the government in ransom for his services as a hired gun, sets out to bring three members of his former gang to justice.",
+        "brand": "Rockstar",
+        "imageUrl": "https://images.ctfassets.net/wn7ipiv9ue5v/6vjsz5jzPitkFIaZW5J595/2ccf17594e3fc2a54a4d02f70e8c1c5f/RDR_StorePage_FOBBackground_3840x2160_Deliv.jpg",
+        "price": 59,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T11:18:43.213Z",
+        "updatedAt": "2024-03-08T11:18:43.213Z",
+        "__v": 0
+    },
+    {
+        "_id": "65eafd3a2d7b1100190e7274",
+        "name": "GTA Vice City",
+        "description": "The open world design lets the player freely roam Vice City, consisting of two main islands. The game's plot is based on multiple real-world people and events in Miami such as Cubans, Haitians, and biker gangs, the 1980s crack epidemic, the Mafioso drug lords of Miami, and the dominance of glam metal.",
+        "brand": "Rockstar",
+        "imageUrl": "https://i1.sndcdn.com/artworks-000279613442-5l2qqp-t500x500.jpg",
+        "price": 45,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T11:57:46.886Z",
+        "updatedAt": "2024-03-08T11:57:46.886Z",
+        "__v": 0
+    },
+    {
+        "_id": "65eafec02d7b1100190e7283",
+        "name": "Crash Bandicoot 3: Warped",
+        "description": "Warped is a platform game in which the player controls Crash and Coco Bandicoot, who must travel through time and gather 25 crystals scattered across time before Doctor Neo Cortex and Uka Uka do so. Much of the game takes place in the Time-Twisting Machine, which acts as the hub area of the game.",
+        "brand": "Naughty Dogs",
+        "imageUrl": "https://cdn.mobygames.com/covers/5515446-crash-bandicoot-warped-playstation-front-cover.png",
+        "price": 33,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T12:04:16.986Z",
+        "updatedAt": "2024-03-08T12:04:16.986Z",
+        "__v": 0
+    },
+    {
+        "_id": "65eaff612d7b1100190e728d",
+        "name": "Spyro the Dragon",
+        "description": "Spyro the Dragon is a 3D platform game; the player controls the titular character as he ventures across the realms of the Dragon World to defeat the antagonistic Gnasty Gnorc, as well as rescue his fellow dragons and recover all of their stolen treasure.",
+        "brand": "Insomniac Games",
+        "imageUrl": "https://cdn.mobygames.com/covers/4799551-spyro-the-dragon-playstation-front-cover.jpg",
+        "price": 25,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T12:06:57.485Z",
+        "updatedAt": "2024-03-08T12:06:57.485Z",
+        "__v": 0
+    },
+    {
+        "_id": "65eb00cf2d7b1100190e729e",
+        "name": "Metal Gear Solid",
+        "description": "Become the legendary Solid Snake, a soldier who infiltrates a nuclear weapons facility to neutralize the terrorist threat from FOXHOUND, a renegade special forces unit. Snake must liberate hostages and stop the terrorists from launching a nuclear strike.",
+        "brand": "Konami",
+        "imageUrl": "https://cdn.mobygames.com/covers/7859164-metal-gear-solid-playstation-front-cover.jpg",
+        "price": 43,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T12:13:03.020Z",
+        "updatedAt": "2024-03-08T12:13:03.020Z",
+        "__v": 0
+    },
+    {
+        "_id": "65eb08562d7b1100190e733b",
+        "name": "Escape from Monkey Island",
+        "description": "Guybrush must find a way to restore Elaine to office, while uncovering a plot to turn the Caribbean into a tourist trap, headed by his nemesis LeChuck and an Australian conspirator Ozzie Mandrill. Escape from Monkey Island won positive reviews and was a moderate commercial success.",
+        "brand": "LucasArts",
+        "imageUrl": "https://mixnmojo.com/galleries/full/full20050121145448.jpg",
+        "price": 22,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T12:45:10.612Z",
+        "updatedAt": "2024-03-08T12:45:10.612Z",
+        "__v": 0
+    },
+    {
+        "_id": "65eb139c2d7b1100190e7690",
+        "name": "Assassin's Creed 2",
+        "description": "The framing story is set in the 21st century and follows Desmond Miles as he relives the genetic memories of his ancestor, Ezio Auditore da Firenze, to uncover the mysteries left behind by an ancient race known as the First Civilization in the hope of ending the Assassin-Templar conflict.",
+        "brand": "Ubisoft",
+        "imageUrl": "https://e-cdn-images.dzcdn.net/images/cover/557de281363393f045699c536413c406/500x500-000000-80-0-0.jpg",
+        "price": 56,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T13:33:16.594Z",
+        "updatedAt": "2024-03-08T13:33:16.594Z",
+        "__v": 0
+    },
+    {
+        "_id": "65eb14602d7b1100190e769f",
+        "name": "The Last of Us",
+        "description": "Set in a post-apocalyptic 2023, The Last of Us presents a world that's been ravaged by a pandemic caused by a fungus called “cordyceps” (terrifyingly, a real fungus), which turns its hosts into violent zombie-like creatures whose only goal is to spread the infection.",
+        "brand": "Naughty Dog",
+        "imageUrl": "https://store.playstation.com/store/api/chihiro/00_09_000/container/IT/it/99/EP9000-NPEA00435_00-THELASTOFUSDIG01/0/image?_version=00_09_000&platform=chihiro&bg_color=000000&opacity=100&w=672&h=672",
+        "price": 60,
+        "userId": "65ead8022d7b1100190e6dda",
+        "createdAt": "2024-03-08T13:36:32.279Z",
+        "updatedAt": "2024-03-08T13:36:32.279Z",
+        "__v": 0
+    }
+]
+*/
+
 const logInBtn = document.getElementById("logInBtn");
 const backendBtn = document.getElementById("backendBtn");
 const homeLink = document.getElementById("homeLink");
