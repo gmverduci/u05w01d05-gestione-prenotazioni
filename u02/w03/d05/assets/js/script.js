@@ -426,7 +426,8 @@ function showLogInModal() {
     if (
       password === "ninnananna" ||
       password === "lullaby" ||
-      password === "cradle song"
+      password === "cradle song"||
+      password === "Wiegenlied op.49 n°4"
     ) {
       localStorage.setItem("isLoggedIn", "true");
 
