@@ -74,7 +74,7 @@ function buildPage() {
   navbarNav.appendChild(navbarNavUlRight);
 
   const logInLink = document.createElement("a");
-  logInLink.className = "nav-link bg-secondary text-white rounded";
+  logInLink.className = "nav-link bg-secondary text-white rounded px-3";
   logInLink.href = "#";
   logInLink.id = logInBtn;
   logInLink.textContent = "Login";
