@@ -1,0 +1,14 @@
+#start-call, #end-call {
+    width: 75px !important;
+    height: 75px !important;
+}
+
+#start-call {
+    left: 350px;
+    bottom: 190px;    
+}
+
+#end-call {
+    left: 225px;
+    bottom: 230px;
+}
