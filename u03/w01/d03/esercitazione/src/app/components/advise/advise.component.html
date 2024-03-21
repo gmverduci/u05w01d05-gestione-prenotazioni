@@ -3,7 +3,7 @@
         <h5>Potrebbero piacerti:</h5>
         <ul class="list-group mb-3">
             <li class="list-group-item" *ngFor="let post of advised">
-                <a class="text-decoration-none text-dark mb-2" [routerLink]="['/post', post.id]">🔗 {{ post.title }}</a>
+                <a class="text-decoration-none text-dark mb-2" [routerLink]="['/post', post.id]">&minus; {{ post.title }}</a>
                 <br />
                 <span
                     class="badge bg-warning me-1 text-uppercase mb-2"
