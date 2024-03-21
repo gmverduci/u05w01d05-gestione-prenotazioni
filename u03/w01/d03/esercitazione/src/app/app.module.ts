@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ActivePostsComponent } from './components/active-posts/active-posts.component';
 import { InactivePostsComponent } from './components/inactive-posts/inactive-posts.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { Error404Component } from './components/error404/error404.component';
 
 const routes: Route[] = [
   {
@@ -28,6 +29,10 @@ const routes: Route[] = [
   {
     path: 'post/:id',
     component: PostDetailsComponent
+  },
+  {
+    path: '**',
+    component: Error404Component
   }
 ];
 
@@ -41,7 +46,8 @@ const routes: Route[] = [
     NavbarComponent,
     ActivePostsComponent,
     InactivePostsComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes)
