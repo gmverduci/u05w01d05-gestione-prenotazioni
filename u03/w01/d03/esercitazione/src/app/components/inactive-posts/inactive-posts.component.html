@@ -5,7 +5,7 @@
         <h5 class="card-title">{{ post.title }}</h5>
         <p class="card-text">{{ post.body }}</p>
         <hr>
-        <p class="small">Reactions: {{ post.reactions }}</p>
+        <p class="small ps-2">Reactions: {{ post.reactions }}</p>
         <p
           class="badge text-primary me-1 text-uppercase"
           *ngFor="let tag of post.tags"
