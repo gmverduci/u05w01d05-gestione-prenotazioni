@@ -1,0 +1,10 @@
+img {
+    width: 100vw;
+    position: relative;
+}
+
+.container-fluid div {
+    position: absolute;
+    z-index: 999999;
+    top: 2%;
+}

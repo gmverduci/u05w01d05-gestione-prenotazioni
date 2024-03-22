@@ -1,0 +1,40 @@
+<nav class="navbar sticky-top navbar-expand-lg bg-dark mb-3 p-0" data-bs-theme="dark">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="active"
+        ><img src="../../../assets/img/logo.png"></a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link active fs-5 display-6"
+              aria-current="page"
+              [routerLink]="['/']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/available']"
+            routerLinkActive="active">Available models</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/unavailable']"
+            routerLinkActive="active">Available for order</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
