@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Dettagli Post</h2>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">{{post.title}} / ID Post: {{post.id}}</h3>
+            <h5 class="card-subtitle mb-2 text-body-secondary">
+                {{post.reactions}} 👍
+            </h5>
+            <p class="card-text">
+                {{post.body}}
+            </p>
+            <span
+                    class="badge bg-primary me-1 text-uppercase"
+                    *ngFor="let tag of post.tags"
+                    >{{ tag }}</span
+                >
+                <br>
+                <a class="btn btn-warning mt-3" id="modify" [routerLink]="['/editPost/', post.id]">MODIFICA</a>
+                <hr />
+                <app-edit-post></app-edit-post>
+                <!-- <div *ngIf="modifyToggle()">
+                    <div class="d-flex flex-column">
+                        <input type="text" [(ngModel)]="post.title" class="card-title form-control">
+                        <textarea cols="30" rows="5" class="card-text form-control" [(ngModel)]="post.body"></textarea>
+                        <button class="btn btn-success mt-2" (click)="editPost()">SAVE</button>
+                      </div>
+                </div> -->
+        </div>
+    </div>
+</div>
+
+
