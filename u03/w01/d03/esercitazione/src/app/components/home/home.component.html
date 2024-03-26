@@ -9,6 +9,11 @@
                     <app-related></app-related>
                 </div>
             </div>
+            <div class="row">
+                <app-single-post *ngFor="let post of posts">
+                    <ng-content *ngIf="edit"></ng-content>
+                </app-single-post>
+            </div>
         </div>
         <div class="col-12 col-lg-4 mb-4">
             <app-advise></app-advise>
