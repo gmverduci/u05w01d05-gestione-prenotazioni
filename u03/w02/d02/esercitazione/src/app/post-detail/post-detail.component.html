@@ -1,0 +1,9 @@
+<div class="card my-2" appRandomBackground>
+  <div class="card-header" appRandomBackground>
+    {{ post?.tags?.join(", ") | uppercase }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ post?.title }}</h5>
+    <p class="card-text">{{ post?.body }}</p>
+  </div>
+</div>

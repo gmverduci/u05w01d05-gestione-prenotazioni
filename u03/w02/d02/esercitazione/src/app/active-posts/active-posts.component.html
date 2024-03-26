@@ -1,0 +1,15 @@
+<div
+  class="card my-2 border-success border-5"
+  *ngFor="let activePost of activePosts"
+>
+  <div class="card-header bg-success rounded-0 text-white">
+    {{ activePost.tags.join(", ") | uppercase }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ activePost.title }}</h5>
+    <p class="card-text">{{ activePost.body }}</p>
+    <a routerLink="/post/{{ activePost.id }}" class="btn btn-success"
+      >DETAILS</a
+    >
+  </div>
+</div>

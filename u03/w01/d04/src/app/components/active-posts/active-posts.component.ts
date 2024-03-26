@@ -18,6 +18,6 @@ export class ActivePostsComponent {
     async getActivePosts() {
         const response = await fetch('http://localhost:3000/data');
         const data = (await response.json()) as Array<Post>;
-        return data.filter((post) => post.active);
+        return data.filter((post) => post.active); 
     }
 }

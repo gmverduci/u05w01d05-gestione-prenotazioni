@@ -1,0 +1,15 @@
+<div
+  class="card my-2 border-warning border-5"
+  *ngFor="let inactivePost of inactivePosts"
+>
+  <div class="card-header bg-warning rounded-0">
+    {{ inactivePost.tags.join(", ") | uppercase }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ inactivePost.title }}</h5>
+    <p class="card-text">{{ inactivePost.body }}</p>
+    <a routerLink="/post/{{ inactivePost.id }}" class="btn btn-warning"
+      >DETAILS</a
+    >
+  </div>
+</div>
