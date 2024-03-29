@@ -1,0 +1,30 @@
+<div class="container border-1 p-1 mb-1">
+  <div class="card">
+     <div class="card-header bg-primary-subtle">
+       <p class="small">#{{ todo.id }}</p>
+     </div>
+     <div
+       class="card-body"
+       [ngClass]="{
+         'bg-danger-subtle': !todo.completed,
+         'bg-success-subtle': todo.completed
+       }"
+     >
+       <h6 class="card-title">{{ todo.todo }}</h6>
+       <p class="card-text">
+         Assigned to:
+         <a [routerLink]="['/users', user?.id]" routerLinkActive="active"
+           >{{ user?.firstName }} {{ user?.lastName }}</a
+         >
+       </p>
+       <div class="card-footer">
+         <p class="card-text">
+           <span *ngIf="todo?.completed; else notCompleted"><button class="btn btn-outline-success" (click)="toggleCompleted()">Completed</button></span>
+           <ng-template #notCompleted><button class="btn btn-outline-danger" (click)="toggleCompleted()">Pending</button>
+           </ng-template>
+         </p>
+       </div>
+     </div>
+  </div>
+ </div>
+ 
