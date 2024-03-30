@@ -43,6 +43,10 @@ const routes: Route[] = [
  {
     path: 'users',
     component: UsersComponent
+ },
+ {
+   path:'**',
+   component: Error404Component
  }
 ];
 
