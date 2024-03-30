@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Route } from '@angular/router';
 import { initializeApp } from 'firebase/app';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "your-api-key",
   authDomain: "todo-list-103b3.firebaseapp.com",
@@ -26,6 +25,7 @@ import { AllTodosComponent } from './components/all-todos/all-todos.component';
 import { UsersComponent } from './components/users/users.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { Error404Component } from './components/error404/error404.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Route[] = [
  {
@@ -58,7 +58,7 @@ const routes: Route[] = [
     NavbarComponent,
     Error404Component,
  ],
- imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
+ imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule],
  providers: [],
  bootstrap: [AppComponent],
 })
