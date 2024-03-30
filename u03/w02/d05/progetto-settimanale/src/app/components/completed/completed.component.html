@@ -2,5 +2,9 @@
     <h1>Let no one dare say that I don't work hard.</h1>
     <hr>
     <app-navbar></app-navbar>
-
-</div>
+  </div>
+  
+  <div *ngFor="let todo of completedTodos">
+    <app-todo [todo]="todo" [user]="getUserById(todo.userId)!" (todoCompleted)="updateTodo($event)"></app-todo>
+  </div>
+  

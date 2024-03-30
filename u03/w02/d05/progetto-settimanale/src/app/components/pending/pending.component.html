@@ -4,3 +4,6 @@
     <app-navbar></app-navbar>
 
 </div>
+<div *ngFor="let todo of completedTodos">
+    <app-todo [todo]="todo" [user]="getUserById(todo.userId)!" (todoCompleted)="updateTodo($event)"></app-todo>
+  </div>

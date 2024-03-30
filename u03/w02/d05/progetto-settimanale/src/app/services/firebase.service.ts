@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Todos } from '../models/todos.interface';
 import { Users } from '../models/users.interface';
 import { getDatabase, ref, onValue } from "firebase/database";
-
+import { firebaseApp } from '../../firebase.init';
 @Injectable({
  providedIn: 'root',
 })
@@ -12,46 +12,40 @@ export class FirebaseService {
  private todosRef = ref(this.db, 'todos');
  private usersRef = ref(this.db, 'users');
 
- todosSub = new Subject<Todos[]>();
- usersSub = new Subject<Users[]>();
+ private todosSubject: BehaviorSubject<Todos[]> = new BehaviorSubject<Todos[]>([]);
+ private usersSubject: BehaviorSubject<Users[]> = new BehaviorSubject<Users[]>([]);
 
- getTodos(): Observable<Todos[]> {
- return new Observable<Todos[]>(observer => {
-    onValue(this.todosRef, (snapshot) => {
-      const data = snapshot.val();
-      const todos = Object.keys(data || {}).map(key => ({ ...data[key], id: key }));
-      observer.next(todos);
-    }, error => {
-      console.error('Error fetching todos:', error);
-      observer.error(error);
-    });
- });
-}
+ todos$ = this.todosSubject.asObservable();
+ users$ = this.usersSubject.asObservable();
 
-getUsers(): Observable<Users[]> {
- return new Observable<Users[]>(observer => {
-    onValue(this.usersRef, (snapshot) => {
-      const data = snapshot.val();
-      const users = Object.keys(data || {}).map(key => ({ ...data[key], id: key }));
-      observer.next(users);
-    }, error => {
-      console.error('Error fetching users:', error);
-      observer.error(error);
-    });
- });
-}
+ constructor() {
+   this.getTodos();
+   this.getUsers();
+ }
 
-updateTodosSubject(todos: Todos[]): void {
- this.todosSub.next(todos);
-}
+ getTodos(): void {
+   onValue(this.todosRef, (snapshot) => {
+     const data = snapshot.val();
+     const todos = Object.keys(data || {}).map(key => ({ ...data[key], id: key }));
+     this.todosSubject.next(todos);
+   }, error => {
+     console.error('Error getting todos:', error);
+   });
+ }
 
-updateUsersSubject(users: Users[]): void {
- this.usersSub.next(users);
-}
+ getUsers(): void {
+   onValue(this.usersRef, (snapshot) => {
+     const data = snapshot.val();
+     const users = Object.keys(data || {}).map(key => ({ ...data[key], id: key }));
+     this.usersSubject.next(users);
+   }, error => {
+     console.error('Error getthing users:', error);
+   });
+ }
 
-getUserById(userId: string): Observable<any> {
-  const userRef = ref(this.db, `users/${userId}`);
-  return new Observable<any>(observer => {
+ getUserById(userId: string): Observable<any> {
+   const userRef = ref(this.db, `users/${userId}`);
+   return new Observable<any>(observer => {
      onValue(userRef, (snapshot) => {
        const user = snapshot.val();
        observer.next(user);
@@ -59,6 +53,16 @@ getUserById(userId: string): Observable<any> {
        console.error('Error fetching user:', error);
        observer.error(error);
      });
-  });
+   });
  }
+
+ updateTodos(todos: Todos[]): void {
+   this.todosSubject.next(todos);
+ }
+
+ updateUsers(users: Users[]): void {
+   this.usersSubject.next(users);
+ }
+
+ 
 }
