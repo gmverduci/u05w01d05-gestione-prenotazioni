@@ -1,4 +1,57 @@
-[
+{
+  "users": [
+    {
+      "email": "mario@rossi.com",
+      "password": "$2a$10$kcc5uZem2Tali3KptwkSreClzdeU5KM7agym60fdTUuRLgChx.shq",
+      "name": "Mario Rossi",
+      "id": 1
+    },
+    {
+      "email": "stefano@feltri.it",
+      "password": "$2a$10$DB5XqOYXf3NQkn9V9Nlp2O8qNGgu5hxVIWOzrFx49sYjZUiUFNkJe",
+      "name": "Stefano Feltri",
+      "id": 2
+    },
+    {
+      "email": "dario@franceschini.com",
+      "password": "$2a$10$1v6DNzIFS2KkqRpvbMBpCO2BmXzK7JZTodHyuZeBplB564ICVQwfC",
+      "name": "Dario Franceschini",
+      "id": 3
+    },
+    {
+      "email": "marta@fascina.org",
+      "password": "$2a$10$YmpRFhqVLRfKXQlLkFs2oOcKT0gdn5nwuamrj2R6H0iA9adGmy6ei",
+      "name": "Marta Fascina",
+      "id": 4
+    }
+  ],
+  "utenti": [
+    {
+      "id": 1,
+      "name": "Gabriele",
+      "email": "gabri@ele.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Antonio",
+      "email": "anto@nio.it",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "name": "Clarissa",
+      "email": "clar!@issa.org",
+      "role": "admin"
+    },
+    {
+      "id": 4,
+      "name": "Stefano",
+      "email": "ste@fano.com",
+      "role": "user"
+    }
+  ],
+  "posts": [
     {
       "userId": 1,
       "id": 1,
@@ -1200,3 +1253,4 @@
       "completed": false
     }
   ]
+}

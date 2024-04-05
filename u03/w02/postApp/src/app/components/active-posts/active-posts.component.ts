@@ -15,13 +15,19 @@ export class ActivePostsComponent implements OnInit {
 
     async ngOnInit(): Promise<void> {
         console.log('ngOnInit attivato');
-        const posts = await this.postSrv.getPosts();
-        this.posts = posts;
+        await this.postSrv.getPosts().subscribe((data: Post[]) => {
+            this.posts = data
+        });
+        
     }
 
     disablePost(id: number, index: number) {
-        this.postSrv.updatePost(id, {completed: false});
+        this.postSrv.updatePost(id, {completed: true}).subscribe();
         this.posts.splice(index, 1);
+    }
+
+    deletePost (id:number) {
+        this.postSrv.deletePost(id).subscribe();
     }
 
 }

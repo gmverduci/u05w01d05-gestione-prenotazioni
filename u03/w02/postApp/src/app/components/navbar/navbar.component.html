@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-black">
+<nav class="navbar navbar-expand-lg bg-black w-100 px-3">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button
@@ -19,11 +19,11 @@
                         class="nav-link text-white"
                         [routerLink]="['/']"
                         routerLinkActive="active"
-                        [routerLinkActiveOptions]="{exact: true}"
+                        [routerLinkActiveOptions]="{ exact: true }"
                         >Home</a
                     >
                 </li>
-                <li class="nav-item">
+                <li *ngIf="user" class="nav-item">
                     <a
                         class="nav-link text-white"
                         [routerLink]="['/activePosts']"
@@ -31,7 +31,7 @@
                         >Post attivi</a
                     >
                 </li>
-                <li class="nav-item">
+                <li *ngIf="user" class="nav-item">
                     <a
                         class="nav-link text-white"
                         [routerLink]="['/inactivePosts']"
@@ -39,7 +39,7 @@
                         >Post non attivi</a
                     >
                 </li>
-                <li class="nav-item">
+                <li *ngIf="user" class="nav-item">
                     <a
                         class="nav-link text-white"
                         [routerLink]="['/users']"
@@ -47,7 +47,33 @@
                         >Lista utenti</a
                     >
                 </li>
+                <li *ngIf="!user" class="nav-item">
+                    <a
+                        class="nav-link text-white fw-bold"
+                        [routerLink]="['/login']"
+                        routerLinkActive="active"
+                        >Login</a
+                    >
+                </li>
+                <li *ngIf="!user" class="nav-item">
+                    <a
+                        class="nav-link text-white fw-bold"
+                        [routerLink]="['/register']"
+                        routerLinkActive="active"
+                        >Signup</a
+                    >
+                </li>
             </ul>
         </div>
     </div>
+    <h5 *ngIf="user" class="text-white float-end me-5">
+        Benvenuto {{ user.user.name }}
+    </h5>
+    <button *ngIf="user"
+        type="button"
+        class="btn btn-danger float-end"
+        (click)="logout()"
+    >
+        Logout
+    </button>
 </nav>

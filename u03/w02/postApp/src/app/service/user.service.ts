@@ -1,44 +1,23 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.interface';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
+
 
 @Injectable({
     providedIn: 'root',
 })
 export class UserService {
-    users: User[] = [
-        {
-            id: 1,
-            name: 'Gabriele',
-            email: 'gabri@ele.com',
-            role: 'admin',
-        },
-        {
-            id: 2,
-            name: 'Antonio',
-            email: 'anto@nio.it',
-            role: 'user',
-        },
-        {
-            id: 3,
-            name: 'Clarissa',
-            email: 'clar!@issa.org',
-            role: 'admin',
-        },
-        {
-            id: 4,
-            name: 'Stefano',
-            email: 'ste@fano.com',
-            role: 'user',
-        },
-    ];
+    apiURL = environment.apiURL;
+    users!: User[];
 
-    constructor() {}
+    constructor(private http: HttpClient) {}
 
     getUsers() {
-        return this.users;
+        return this.http.get<User[]>(`${this.apiURL}utenti`);
     }
 
     getUser(id: number) {
-        return this.users.find(user => user.id === id);
+        return this.http.get<User>(`${this.apiURL}utenti/${id}`);
     }
 }
