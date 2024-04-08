@@ -1,87 +1,54 @@
-<section class="container-fluid mb-5">
-    <!-- All Movies Carousel -->
-    <div id="allMoviesCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-md-2" *ngFor="let movie of allMovies | slice:0:10">
-              <div class="card">
-                <img [src]="getImageUrl(movie.poster_path)" class="card-img-top img-hover" alt="{{ movie.title }}">
-                <div class="card-body">
-                  <h5 class="card-title">{{ movie.title }}</h5>
-                  <p class="card-text">{{ movie.overview }}</p>
-                </div>
-              </div>
+<section class="container mb-5">
+
+    <div class="container text-start mb-4">
+        <h2 class="text-light display-6 mb-3">Catalogo Film</h2>
+        <div class="row">
+            <div
+                class="col-6 col-md-4 col-lg-3 d-flex align-self-stretch"
+                *ngFor="let movie of allMovies | slice:0:8"
+                style="height: 100%;"
+            >
+                <img
+                    [src]="getImageUrl(movie.poster_path)"
+                    class="btn border-0 img-fluid img-hover py-2 shadow"
+                    alt="{{ movie.title }}"
+                    height="100%"
+                />
             </div>
-          </div>
         </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#allMoviesCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#allMoviesCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-  
-    <!-- Recommended Movies Carousel -->
-    <div class="mt-5">
-      <div id="recommendedMoviesCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-2" *ngFor="let movie of recommendedMovies | slice:0:10">
-                <div class="card">
-                  <img [src]="getImageUrl(movie.poster_path)" class="card-img-top img-hover" alt="{{ movie.title }}">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ movie.title }}</h5>
-                    <p class="card-text">{{ movie.overview }}</p>
-                  </div>
-                </div>
-              </div>
+
+    <div class="container text-start mb-4">
+        <h2 class="text-light display-6 mb-3">Scelti per te</h2>
+        <div class="row">
+            <div
+                class="col-6 col-md-4 col-lg-3 d-flex align-self-stretch"
+                *ngFor="let movie of recommendedMovies | slice:0:8"
+            >
+                <img
+                    [src]="getImageUrl(movie.poster_path)"
+                    class="btn border-0 img-fluid img-hover py-2 shadow"
+                    alt="{{ movie.title }}"
+                    height="100%"
+                />
             </div>
-          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#recommendedMoviesCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#recommendedMoviesCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
     </div>
-  
-    <!-- Popular Movies Carousel -->
-    <div class="mt-5">
-      <div id="popularMoviesCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-2" *ngFor="let movie of popularMovies | slice:0:10">
-                <div class="card">
-                  <img [src]="getImageUrl(movie.poster_path)" class="card-img-top img-hover" alt="{{ movie.title }}">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ movie.title }}</h5>
-                    <p class="card-text">{{ movie.overview }}</p>
-                  </div>
-                </div>
-              </div>
+
+    <div class="container text-start mb-4">
+        <h2 class="text-light display-6 mb-3">I più amati</h2>
+        <div class="row">
+            <div
+                class="col-6 col-md-4 col-lg-3 d-flex align-self-stretch"
+                *ngFor="let movie of popularMovies | slice:0:8"
+            >
+                <img
+                    [src]="getImageUrl(movie.poster_path)"
+                    class="btn border-0 img-fluid img-hover py-2 shadow"
+                    alt="{{ movie.title }}"
+                    height="100%"
+                />
             </div>
-          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#popularMoviesCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#popularMoviesCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
     </div>
-  </section>
-  
+</section>

@@ -81,6 +81,24 @@
       "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/5ydZ6TluPtxlz5G8nlWMB7SGmow.jpg",
       "favorites": [],
       "id": 7
+    },
+    {
+      "email": "sensi@sensi.com",
+      "password": "$2a$10$OESwpc0UKJNWHs0EK1mBwucNQERy7D0JePj3i11s7LUibfqRAr1iy",
+      "name": "Serena",
+      "adult": false,
+      "genres": [
+        12,
+        10751,
+        80,
+        18,
+        9648,
+        10770,
+        53
+      ],
+      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/5Yb3nmRWXXZAxNhfhEuOMdfyVNN.jpg",
+      "favorites": [],
+      "id": 8
     }
   ],
   "avatars": [

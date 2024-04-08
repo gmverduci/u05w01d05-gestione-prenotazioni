@@ -5,6 +5,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { UserComponent } from './components/user/user.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
     {
@@ -14,20 +15,24 @@ const routes: Routes = [
             {
                 path: 'login',
                 component: LoginComponent,
+                canActivate: [AuthGuard]
             },
             {
               path: 'movies',
-              component: MoviesComponent
+              component: MoviesComponent,
+              canActivate: [AuthGuard]
             }
         ],
     },
     {
         path: 'signup',
         component: SignupComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'user/:id',
         component: UserComponent,
+        canActivate: [AuthGuard]
     }
     
 ];
