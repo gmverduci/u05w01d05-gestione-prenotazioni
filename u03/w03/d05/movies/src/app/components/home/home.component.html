@@ -1,7 +1,6 @@
 <div
     class="container-fluid py-5 pt-3 pb-5"
     [ngStyle]="isMoviesRoute ? moviesBackgroundStyle : bgNetStyle"
-   
 >
     <div class="container-fluid py-4">
         <div
@@ -12,17 +11,12 @@
                 width="20%"
                 alt="Netflix Logo"
                 class="btn border-0"
-                routerLink=""
-                routerLinkActive="active"
             />
             <div class="d-flex">
                 <img
-                    *ngIf="
-                        currentRoute === '/movies' &&
-                        user
-                    "
+                    *ngIf="user"
                     src="{{ user.user.avatar }}"
-                    class="p-0 me-4 avatarpic rounded-5"
+                    class="btn p-0 me-4 avatarpic rounded-5"
                     [routerLink]="['/user', user.user.id]"
                     routerLinkActive="active"
                 />
@@ -40,7 +34,7 @@
                     </ul>
                 </div>
                 <button
-                    *ngIf="currentRoute !== '/login' && !user"
+                    *ngIf="!user"
                     type="button"
                     class="btn btn-danger signin-btn py-1 rounded-1"
                     routerLink="/login"
@@ -49,7 +43,7 @@
                     Login
                 </button>
                 <button
-                    *ngIf="currentRoute === '/movies' && user"
+                    *ngIf="user"
                     type="button"
                     class="btn btn-danger signin-btn py-1 rounded-1"
                     (click)="logout()"
@@ -64,7 +58,7 @@
         class="container-fluid d-flex justify-content-center align-items-center text-center py-5"
     >
         <div
-            *ngIf="currentRoute !== '/login' && !user"
+            *ngIf="currentRoute === '/signup' && !user"
             class="container text-white"
         >
             <h1 class="my-3">Unlimited movies, TV shows, and more</h1>
