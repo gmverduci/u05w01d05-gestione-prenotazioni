@@ -1,4 +1,4 @@
-export interface User {
+export interface Signup {
     name: string,
     email: string,
     adult: boolean,
@@ -6,6 +6,4 @@ export interface User {
     password: string,
     avatar: string,
     favorites: number[]
-    id: number,
-   
 }

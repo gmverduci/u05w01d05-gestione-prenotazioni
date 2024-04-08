@@ -1,0 +1,93 @@
+<div class="container-fluid py-5 bg-net pt-3 pb-5">
+    <div class="container-fluid py-4">
+        <div
+            class="container d-flex justify-content-between align-items-center"
+        >
+            <img
+                src="../../../assets/img/logo-Netflix.png"
+                width="20%"
+                alt="Netflix Logo"
+                class="btn border-0"
+                routerLink=""
+                routerLinkActive="active"
+            />
+            <div class="d-flex">
+                <img *ngIf="currentRoute === '/movies' && user" src="{{user.user.avatar}}" class="btn p-0 avatarpic me-4 rounded-5" [routerLink]="['/user', user.user.id]"
+                routerLinkActive="active">
+                <div class="dropdown">
+                    <button
+                        class="btn btn-outline-light text-white dropdown-toggle bg-transparent py-2 me-4 py-1 rounded-1"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        English
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                    </ul>
+                </div>
+                <button
+                    *ngIf="currentRoute !== '/login' && !user"
+                    type="button"
+                    class="btn btn-danger signin-btn py-1 rounded-1"
+                    routerLink="/login"
+                    routerLinkActive="active"
+                >
+                    Login
+                </button>
+                <button
+                    *ngIf="currentRoute === '/movies' && user"
+                    type="button"
+                    class="btn btn-danger signin-btn py-1 rounded-1"
+                    (click)="logout()"
+                >
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="container-fluid d-flex justify-content-center align-items-center text-center py-5"
+    >
+        <div
+            *ngIf="currentRoute !== '/login' && !user"
+            class="container text-white"
+        >
+            <h1 class="my-3">Unlimited movies, TV shows, and more</h1>
+            <h3 class="my-4">Watch anywhere. Cancel anytime.</h3>
+            <h3 class="my-4">
+                Ready to watch? Enter your email to create or restart your
+                membership.
+            </h3>
+            <div class="row justify-content-center mt-5 py-3">
+                <div class="col-md-10">
+                    <div class="input-group">
+                        <form [formGroup]="emailForm" class="d-flex w-100">
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-control form-control-lg transparent-input me-3 rounded-1"
+                                placeholder="Email address"
+                                formControlName="email"
+                            />
+                            <button
+                                type="button"
+                                class="btn btn-lg btn-danger signin-btn fw-semibold rounded-1"
+                                (click)="onSignupClick()"
+                                [disabled]="!emailForm.valid"
+                            >
+                                Signup
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-login *ngIf="currentRoute === '/login' && !user"></app-login>
+        <app-movies *ngIf="user"></app-movies>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -4,26 +4,30 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class UsersService {
-  apiURL = environment.apiURL;
-  users!: User[];
-  favorites: number[] = [];
+    apiURL = environment.apiURL;
+    avatarURL = environment.avatarURL;
+    users!: User[];
+    favorites: number[] = [];
+    avatars: string[] = [];
 
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
+    getUsers() {
+        return this.http.get<User[]>(`${this.apiURL}users`);
+    }
 
-  getUsers(){
-    return this.http.get<User[]>(`${this.apiURL}users`);
-  }
+    getUser(id: number) {
+        return this.http.get<User>(`${this.apiURL}users/${id}`);
+    }
 
-  getUser(id: number){
-    return this.http.get<number[]>(`${this.apiURL}users/${id}`)
-  }
+    getFavorites(user: User) {
+        this.favorites.concat(user.favorites);
+    }
 
-  getFavorites(user: User){
-    this.favorites.concat(user.favorites);
-  }
-
+    getavatars() {
+        return this.http.get<string[]>(`${this.apiURL}avatars`);
+    }
 }

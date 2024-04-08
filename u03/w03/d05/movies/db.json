@@ -5,32 +5,113 @@
       "password": "$2a$10$ZLY63quWnMVo0lO951uFdOJRfUxeo8U6YJ/Cue06Vgp4Ad8S/CjaC",
       "name": "Dario",
       "id": 2,
-      "favorites":[578701, 615457]
+      "favorites": [
+        578701,
+        615457
+      ]
     },
     {
       "email": "mario@rossi.com",
       "password": "$2a$10$RsIosJKYgHyT8uo.bosI5uYpN0PVmA6xdnhjT4jIFcbKbVS2RsiRC",
       "name": "Mario Rossi",
       "id": 3,
-      "favorites":[]
+      "favorites": []
+    },
+    {
+      "email": "marcello@verduci.com",
+      "password": "$2a$10$TBQs1K7uEveYNTDZNXdP6uXKla4Vvgs8A2qKxl3eEOZWO3fUTl6MW",
+      "name": "Marcello",
+      "adult": true,
+      "genres": [
+        27,
+        80,
+        12,
+        35
+      ],
+      "favorites": [],
+      "id": 4
+    },
+    {
+      "email": "chiara@versace.com",
+      "password": "$2a$10$gkqUWaz1YJLYccZ2./K2JecOXYqAKBpS1CpcO82JEMsjbOEO32ikq",
+      "name": "Chiara",
+      "adult": false,
+      "genres": [
+        35,
+        10751,
+        878,
+        10402
+      ],
+      "favorites": [],
+      "id": 5
+    },
+    {
+      "email": "tobia@toby.it",
+      "password": "$2a$10$XR5w2KxC//JIm8bJWMsene23UfDk7ZaY7yN.JEeSomaBfrJugqf42",
+      "name": "Toby",
+      "adult": true,
+      "genres": [
+        53,
+        10749,
+        27,
+        36,
+        9648
+      ],
+      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/9VYK7oxcqhjd5LAH6ZFJ3XzOlID.jpg",
+      "favorites": [],
+      "id": 6
     }
+  ],
+  "avatars": [
+    "9VYK7oxcqhjd5LAH6ZFJ3XzOlID.jpg",
+    "yxYOaalFh8SUwNE5C0wzOwF89Ny.jpg",
+    "BE2sdjpgsa2rNTFa66f7upkaOP.jpg",
+    "iWdKjMry5Pt7vmxU7bmOQsIUyHa.jpg",
+    "m8bdrmh6ExDCGQ64E83mHg002YV.jpg",
+    "5ydZ6TluPtxlz5G8nlWMB7SGmow.jpg",
+    "4SYTH5FdB0dAORV98Nwg3llgVnY.jpg",
+    "nraZoTzwJQPHspAVsKfgl3RXKKa.jpg",
+    "pOpbPofjwpynRkWPZZZkyGds6rx.jpg",
+    "4D0PpNI0kmP58hgrwGC3wCjxhnm.jpg",
+    "9ukJS2QWTJ22HcwR1ktMmoJ6RSL.jpg",
+    "nCJJ3NVksYNxIzEHcyC1XziwPVj.jpg",
+    "wTSnfktNBLd6kwQxgvkqYw6vEon.jpg",
+    "resiaRfWvj4N84TgJi9DPOafCpq.jpg",
+    "1WKfLshTtawW26lqOcKZhS4lZVA.jpg",
+    "siSWRRFN9uO6iCN7y9OrHU5IaJ.jpg",
+    "ykBEiVh6YQ9UmMAYUiQkZBH3VV4.jpg",
+    "63zA58rSyJxBMLBdgeMjjETmpDQ.jpg",
+    "nnCsJc9x3ZiG3AFyiyc3FPehppy.jpg",
+    "vq4vuAVhYngfzVNn8SbnG0JEy15.jpg",
+    "zChwjQ9D90fxx6cgWz5mUWHNd5b.jpg",
+    "emAAzyK1rJ6aiMi0wsWYp51EC3h.jpg",
+    "yjow3MJDkgQuHx1fCpo4FZmXZcq.jpg",
+    "qZRTzTjV4OC1Ii9a0n8QBS9zMOd.jpg",
+    "slPWN0VvYJtNOEuxlFSsXSNQMaF.jpg",
+    "kgAdQA2ItCDVvKXufeDHc6Omiso.jpg",
+    "xms1RAY6q7Lzp7wNeRCB0kzhucn.jpg",
+    "aNvyDYD0YscuwMfgy15wb5gRKph.jpg",
+    "uin6aAehUGpPCiJCaSjZG8B7M7d.jpg",
+    "3RX8OBqt3gbvFwKYZqiom4O3Ta6.jpg",
+    "50rqDkmvXwjwVhFH7q6ph2Rkw7S.jpg",
+    "5Yb3nmRWXXZAxNhfhEuOMdfyVNN.jpg"
   ],
   "genres": [
     {
       "id": 28,
-      "name": "Azione"
+      "name": "Action"
     },
     {
       "id": 12,
-      "name": "Avventura"
+      "name": "Adventure"
     },
     {
       "id": 16,
-      "name": "Animazione"
+      "name": "Animation"
     },
     {
       "id": 35,
-      "name": "Commedia"
+      "name": "Comedy"
     },
     {
       "id": 80,
@@ -38,15 +119,15 @@
     },
     {
       "id": 99,
-      "name": "Documentario"
+      "name": "Documentary"
     },
     {
       "id": 18,
-      "name": "Dramma"
+      "name": "Drama"
     },
     {
       "id": 10751,
-      "name": "Famiglia"
+      "name": "Family"
     },
     {
       "id": 14,
@@ -54,7 +135,7 @@
     },
     {
       "id": 36,
-      "name": "Storia"
+      "name": "History"
     },
     {
       "id": 27,
@@ -66,7 +147,7 @@
     },
     {
       "id": 9648,
-      "name": "Mistero"
+      "name": "Mistery"
     },
     {
       "id": 10749,
@@ -74,11 +155,11 @@
     },
     {
       "id": 878,
-      "name": "Fantascienza"
+      "name": "Scifi"
     },
     {
       "id": 10770,
-      "name": "televisione film"
+      "name": "TV shows"
     },
     {
       "id": 53,
@@ -86,7 +167,7 @@
     },
     {
       "id": 10752,
-      "name": "Guerra"
+      "name": "War"
     },
     {
       "id": 37,
@@ -496,9 +577,7 @@
       "video": false,
       "vote_average": 7.4,
       "vote_count": 491
-    }
-  ],
-  "movies-toprated": [
+    },
     {
       "adult": false,
       "backdrop_path": "/gNBCvtYyGPbjPCT1k3MvJuNuXR6.jpg",
