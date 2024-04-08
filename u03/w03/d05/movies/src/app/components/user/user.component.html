@@ -8,20 +8,25 @@
                 width="20%"
                 alt="Netflix Logo"
                 class="btn border-0 mb-0 pb-0"
-                routerLink=""
+                routerLink="/"
                 routerLinkActive="active"
             />
             <h2 class="ms-5 m-0">User details</h2>
         </div>
-        <hr>
-        <div class="row my-5 px-5">
-            <div class="col-4 px-5 rounded-5"><img class="mb-4 rounded-5 w-50" src="{{currentUser.avatar}}">
-                <ul>
-                    <li><b>Name:</b> {{currentUser.name}}</li>
-                    <li><b>Email:</b> {{currentUser.email}}</li>
-                </ul></div>
-            <div class="col-4">
-                
+        <hr />
+        <div class="container px-5">
+            <div class="row my-5 px-5">
+                <div class="col-3 px-5 rounded-5">
+                    <img
+                        class="mb-4 rounded-5 w-50"
+                        src="{{ currentUser.avatar }}"
+                    />
+                    <ul>
+                        <li><b>Name:</b> {{ currentUser.name }}</li>
+                        <li><b>Email:</b> {{ currentUser.email }}</li>
+                    </ul>
+                </div>
+                <div class="col-4"></div>
             </div>
         </div>
     </div>

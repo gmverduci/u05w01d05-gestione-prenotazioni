@@ -1,1 +1,87 @@
-<p>movies works!</p>
+<section class="container-fluid mb-5">
+    <!-- All Movies Carousel -->
+    <div id="allMoviesCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-2" *ngFor="let movie of allMovies | slice:0:10">
+              <div class="card">
+                <img [src]="getImageUrl(movie.poster_path)" class="card-img-top img-hover" alt="{{ movie.title }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ movie.title }}</h5>
+                  <p class="card-text">{{ movie.overview }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#allMoviesCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#allMoviesCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  
+    <!-- Recommended Movies Carousel -->
+    <div class="mt-5">
+      <div id="recommendedMoviesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-2" *ngFor="let movie of recommendedMovies | slice:0:10">
+                <div class="card">
+                  <img [src]="getImageUrl(movie.poster_path)" class="card-img-top img-hover" alt="{{ movie.title }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <p class="card-text">{{ movie.overview }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#recommendedMoviesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#recommendedMoviesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Popular Movies Carousel -->
+    <div class="mt-5">
+      <div id="popularMoviesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-2" *ngFor="let movie of popularMovies | slice:0:10">
+                <div class="card">
+                  <img [src]="getImageUrl(movie.poster_path)" class="card-img-top img-hover" alt="{{ movie.title }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <p class="card-text">{{ movie.overview }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#popularMoviesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#popularMoviesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  

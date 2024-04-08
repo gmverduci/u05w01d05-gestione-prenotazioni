@@ -11,6 +11,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { UserComponent } from './components/user/user.component';
+import { ChunkPipe } from './pipes/chunk.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { UserComponent } from './components/user/user.component';
     SignupComponent,
     LoginComponent,
     MoviesComponent,
-    UserComponent
+    UserComponent,
+    ChunkPipe
     
   ],
   imports: [

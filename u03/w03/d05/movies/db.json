@@ -60,6 +60,27 @@
       "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/9VYK7oxcqhjd5LAH6ZFJ3XzOlID.jpg",
       "favorites": [],
       "id": 6
+    },
+    {
+      "email": "ciao@gmail.com",
+      "password": "$2a$10$Y74yjE8v1QRPdqb98LsIuefZoUTNsO5fRs2GHdFbztI3de8W3tjY.",
+      "name": "Ciao",
+      "adult": true,
+      "genres": [
+        28,
+        35,
+        18,
+        36,
+        9648,
+        10770,
+        37,
+        878,
+        14,
+        12
+      ],
+      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/5ydZ6TluPtxlz5G8nlWMB7SGmow.jpg",
+      "favorites": [],
+      "id": 7
     }
   ],
   "avatars": [
@@ -174,9 +195,9 @@
       "name": "Western"
     }
   ],
-  "movies-popular": [
+  "movies": [
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/6ELCZlTA5lGUops70hKdB83WJxH.jpg",
       "genre_ids": [
         28,
@@ -196,7 +217,7 @@
       "vote_count": 2659
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/fPGeS6jgdLovQAKunNHX8l0avCy.jpg",
       "genre_ids": [
         28,
@@ -216,7 +237,7 @@
       "vote_count": 999
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/iDdpiUnCeXvBmrkBFpL6lKsZt33.jpg",
       "genre_ids": [
         53,
@@ -237,7 +258,7 @@
       "vote_count": 280
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/blk6UPEoaKwlFIEuHWhVEuTQULC.jpg",
       "genre_ids": [
         27
@@ -255,7 +276,7 @@
       "vote_count": 301
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/mYM8x2Atv4MaLulaV0KVJWI1Djv.jpg",
       "genre_ids": [
         28,
@@ -333,7 +354,7 @@
       "vote_count": 10
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/3Ef8PWUiP1ehO1ESEroxb736srR.jpg",
       "genre_ids": [
         53,
@@ -539,7 +560,7 @@
       "vote_count": 46
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/c0izdYdnTe4uMRifHgvTA85wPz0.jpg",
       "genre_ids": [
         28,
@@ -636,7 +657,7 @@
       "vote_count": 18967
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg",
       "genre_ids": [
         18,
@@ -692,7 +713,7 @@
       "vote_count": 2044
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/loRmRzQXZeqG78TqZuyvSlEQfZb.jpg",
       "genre_ids": [
         18,
@@ -712,7 +733,7 @@
       "vote_count": 11402
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/poec6RqOKY9iSiIUmfyfPfiLtvB.jpg",
       "genre_ids": [
         18,

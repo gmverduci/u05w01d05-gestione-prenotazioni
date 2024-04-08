@@ -1,7 +1,7 @@
 export interface Auth {
     accessToken: string,
     user: {
-        id: string,
+        id: number,
         email: string
         avatar: string
     }
