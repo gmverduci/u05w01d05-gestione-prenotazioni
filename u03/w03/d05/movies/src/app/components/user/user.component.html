@@ -1,24 +1,15 @@
 <div class="container-fluid py-5 bg-net pt-3 pb-5">
-    <div class="container-fluid py-4">
         <div
             class="container d-flex justify-content-start align-items-baseline"
         >
-            <img
-                src="../../../assets/img/logo-Netflix.png"
-                width="20%"
-                alt="Netflix Logo"
-                class="btn border-0 mb-0 pb-0"
-                routerLink="/"
-                routerLinkActive="active"
-            />
             <h2 class="ms-5 m-0">User details</h2>
         </div>
         <hr />
-        <div class="container px-5">
+        <div class="container">
             <div class="row my-5 px-5">
-                <div class="col-3 px-5 rounded-5">
+                <div class="col-4 px-5 rounded-5">
                     <img
-                        class="mb-4 rounded-5 w-50"
+                        class="mb-4 rounded-5 w-75"
                         src="{{ currentUser.avatar }}"
                     />
                     <ul>
@@ -28,6 +19,7 @@
                 </div>
                 <div class="col-4"></div>
             </div>
+            <button type="button" class="btn btn-outline-light float-end" routerLink="/users">All Users</button>
+
         </div>
-    </div>
 </div>

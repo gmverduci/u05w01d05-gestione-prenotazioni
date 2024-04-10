@@ -1,53 +1,226 @@
 <section class="container mb-5">
-
-    <div class="container text-start mb-5 py-3">
+    <div class="movie-container container text-start mb-5 py-5">
         <h2 class="text-light display-5 mb-2">Catalogo Film</h2>
-        <div class="row">
+        <div class="row px-5">
             <div
-                class="col-6 col-md-4 col-lg-3 d-flex align-self-stretch"
+                class="col-md-6 col-lg-3 d-flex pe-5"
                 *ngFor="let movie of allMovies"
-                style="height: 100%;"
+                style="height: 100%"
             >
-                <img
-                    [src]="getImageUrl(movie.poster_path)"
-                    class="btn border-0 img-fluid img-hover py-2 shadow"
-                    alt="{{ movie.title }}"
-                    height="100%"
-                />
+                <button
+                    type="button"
+                    class="btn bg-transparent"
+                    data-bs-toggle="modal"
+                    [attr.data-bs-target]="'#' + movie.id"
+                >
+                    <img
+                        [src]="getImageUrl(movie.poster_path)"
+                        class="border-0 py-2 movie-image cover-fill"
+                        alt="{{ movie.title }}"
+                        height="100%"
+                    />
+                </button>
+                <i
+                    class="bi fav"
+                    [ngClass]="{
+                        'bi-star': !isFavorite(movie.id),
+                        'bi-star-fill': isFavorite(movie.id)
+                    }"
+                    (click)="toggleFavorite(movie)"
+                ></i>
+                <div
+                    class="modal fade"
+                    id="{{ movie.id }}"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                >
+                    <div
+                        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                    >
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1
+                                    class="modal-title fs-5"
+                                    id="exampleModalLabel"
+                                >
+                                    {{ movie.title }}
+                                </h1>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <h6>{{ movie.overview }}</h6>
+                                <hr />
+                                <p>Release date: {{ movie.release_date }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                >
+                                    Close
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container text-start mb-5 py-3">
+    <div class="movie-container container text-start mb-5 py-3">
         <h2 class="text-light display-5 mb-2">Scelti per te</h2>
-        <div class="row">
+        <div class="row px-5">
             <div
-                class="col-6 col-md-4 col-lg-3 d-flex align-self-stretch"
+                class="col-md-6 col-lg-3 d-flex pe-5"
                 *ngFor="let movie of recommendedMovies"
             >
-                <img
-                    [src]="getImageUrl(movie.poster_path)"
-                    class="btn border-0 img-fluid img-hover py-2 shadow"
-                    alt="{{ movie.title }}"
-                    height="100%"
-                />
+            <button
+            type="button"
+            class="btn bg-transparent"
+            data-bs-toggle="modal"
+            [attr.data-bs-target]="'#' + movie.id"
+        >
+            <img
+                [src]="getImageUrl(movie.poster_path)"
+                class="border-0 py-2 movie-image cover-fill"
+                alt="{{ movie.title }}"
+                height="100%"
+            />
+        </button>
+        <i
+            class="bi fav"
+            [ngClass]="{
+                'bi-star': !isFavorite(movie.id),
+                'bi-star-fill': isFavorite(movie.id)
+            }"
+            (click)="toggleFavorite(movie)"
+        ></i>
+        <div
+            class="modal fade"
+            id="{{ movie.id }}"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+            >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1
+                            class="modal-title fs-5"
+                            id="exampleModalLabel"
+                        >
+                            {{ movie.title }}
+                        </h1>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>{{ movie.overview }}</h6>
+                        <hr />
+                        <p>Release date: {{ movie.release_date }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
             </div>
         </div>
     </div>
 
-    <div class="container text-start mb-5 py-3">
+    <div class="movie-container container text-start mb-5 py-3">
         <h2 class="text-light display-5 mb-2">I più amati</h2>
-        <div class="row">
+        <div class="row px-5">
             <div
-                class="col-6 col-md-4 col-lg-3 d-flex align-self-stretch"
+                class="col-md-6 col-lg-3 d-flex pe-5"
                 *ngFor="let movie of popularMovies"
             >
-                <img
-                    [src]="getImageUrl(movie.poster_path)"
-                    class="btn border-0 img-fluid img-hover py-2 shadow"
-                    alt="{{ movie.title }}"
-                    height="100%"
-                />
+            <button
+            type="button"
+            class="btn bg-transparent"
+            data-bs-toggle="modal"
+            [attr.data-bs-target]="'#' + movie.id"
+        >
+            <img
+                [src]="getImageUrl(movie.poster_path)"
+                class="border-0 py-2 movie-image cover-fill"
+                alt="{{ movie.title }}"
+                height="100%"
+            />
+        </button>
+        <i
+            class="bi fav"
+            [ngClass]="{
+                'bi-star': !isFavorite(movie.id),
+                'bi-star-fill': isFavorite(movie.id)
+            }"
+            (click)="toggleFavorite(movie)"
+        ></i>
+        <div
+            class="modal fade"
+            id="{{ movie.id }}"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+            >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1
+                            class="modal-title fs-5"
+                            id="exampleModalLabel"
+                        >
+                            {{ movie.title }}
+                        </h1>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>{{ movie.overview }}</h6>
+                        <hr />
+                        <p>Release date: {{ movie.release_date }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
             </div>
         </div>
     </div>

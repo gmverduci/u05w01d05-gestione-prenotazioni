@@ -1,5 +1,6 @@
-<div class="row">
-    <div class="col p-5 bg-login">
+<div class="container-fluid bg-login">
+<div class="row d-flex justify-content-center">
+    <div class="col-4 my-5 p-5 op75 rounded-top-2">
         <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="fs-4 text-start text-white">
             <label for="email" class="form-label">Email</label>
             <input
@@ -29,4 +30,5 @@
             </button>
         </form>
     </div>
+</div>
 </div>

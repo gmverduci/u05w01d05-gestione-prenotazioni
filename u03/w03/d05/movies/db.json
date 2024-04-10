@@ -8,14 +8,16 @@
       "favorites": [
         578701,
         615457
-      ]
+      ],
+      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/5ydZ6TluPtxlz5G8nlWMB7SGmow.jpg"
     },
     {
       "email": "mario@rossi.com",
       "password": "$2a$10$RsIosJKYgHyT8uo.bosI5uYpN0PVmA6xdnhjT4jIFcbKbVS2RsiRC",
       "name": "Mario Rossi",
       "id": 3,
-      "favorites": []
+      "favorites": [],
+      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/pOpbPofjwpynRkWPZZZkyGds6rx.jpg"
     },
     {
       "email": "marcello@verduci.com",
@@ -28,7 +30,11 @@
         12,
         35
       ],
-      "favorites": [],
+      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/4SYTH5FdB0dAORV98Nwg3llgVnY.jpg",
+      "favorites": [
+        804435,
+        586047
+      ],
       "id": 4
     },
     {
@@ -42,6 +48,7 @@
         878,
         10402
       ],
+      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/50rqDkmvXwjwVhFH7q6ph2Rkw7S.jpg",
       "favorites": [],
       "id": 5
     },
@@ -78,7 +85,7 @@
         14,
         12
       ],
-      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/5ydZ6TluPtxlz5G8nlWMB7SGmow.jpg",
+      "avatar": "https://media.themoviedb.org/t/p/w470_and_h470_face/ykBEiVh6YQ9UmMAYUiQkZBH3VV4.jpg",
       "favorites": [],
       "id": 7
     },

@@ -12,11 +12,14 @@ export class LoginComponent {
 
     login(form: NgForm) {
         console.log(form.value);
-        try {
-            this.authSrv.login(form.value).subscribe();
-            this.router.navigate(['/movies']);
-        } catch (error) {
-            console.error(error);
-        }
+        this.authSrv.login(form.value).subscribe(
+            () => {
+                this.router.navigate(['/movies']);
+            },
+            error => {
+                console.error(error);
+            }
+        );
     }
+    
 }

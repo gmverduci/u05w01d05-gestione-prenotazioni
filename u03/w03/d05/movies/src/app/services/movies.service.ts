@@ -6,7 +6,9 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { AuthService } from '../auth/auth.service';
 import { map, switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { UsersService } from './users.service';
+
 
 
 @Injectable({
@@ -16,8 +18,13 @@ export class MoviesService {
   apiURL = environment.apiURL;
   genres!: Genres[];
   movies!: Movie[];
+  user!: User | null;
+  favoriteMovies!: number[];
 
-  constructor(private http: HttpClient, private authSrv: AuthService) {}
+  favorites = new BehaviorSubject<number[]>([]);
+  userFavorites!: number[];
+
+  constructor(private http: HttpClient, private authSrv: AuthService, private userSrv: UsersService) {}
 
   getMovies(){
     return this.http.get<Movie[]>(`${this.apiURL}movies`)
@@ -26,12 +33,43 @@ export class MoviesService {
 
   getGenres(){
     return this.http.get<Genres[]>(`${this.apiURL}genres`)
+
+
   }
 
-  getFavoriteMovies() {
-    const userId = this.authSrv.getUserId(); 
-    return this.http.get<Movie[]>(`${this.apiURL}users/${userId}/favorites`);
+  isFav(id: number) {
+    return this.userFavorites.find(favorite => favorite === id);
+}
+
+addFavorite(id: number) {
+  const exist = this.userFavorites.find(present => present === id);
+  if(!exist) {
+      this.userFavorites.push(id);
+      this.favoritesList();
   }
+}
+
+favoritesList() {
+  this.favorites.next(this.userFavorites);
+}
+
+removeFavorite(id: number) {
+  const index = this.userFavorites.findIndex(favorite => favorite === id);
+  this.userFavorites.splice(index, 1);
+  this.favoritesList();
+}
+
+getFavoriteMovies(){
+  const userId = this.authSrv.getUserId();
+
+  this.userSrv.getUser(userId).pipe(
+    map((user: User) => {
+      this.userFavorites = user.favorites;
+      console.log('FAVORITE SERVC: ',this.userFavorites)
+      this.favorites.next(this.userFavorites);
+    })
+  );
+}
 
   getRecommendedMovies(): Observable<Movie[]> {
     const userId = this.authSrv.getUserId();
@@ -47,5 +85,7 @@ export class MoviesService {
       })
     );
   }
+
+   
   
 }

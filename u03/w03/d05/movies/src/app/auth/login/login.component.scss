@@ -1,8 +1,20 @@
 .bg-login {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../../assets/img/bg-big.jpeg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
     background-color: rgba(0, 0, 0, 0.7);
+    height: 95vh;
+    padding-top: 10vh;
+    
 
 }
 
 .signin-btn {
     background-color: #FF050A !important;
+}
+
+.op75 {
+    background-color: rgba(0, 0, 0, 0.65);
 }

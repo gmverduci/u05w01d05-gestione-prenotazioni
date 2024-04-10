@@ -12,6 +12,10 @@ import { LoginComponent } from './auth/login/login.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { UserComponent } from './components/user/user.component';
 import { ChunkPipe } from './pipes/chunk.pipe';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { UsersComponent } from './components/users/users.component';
+import { Error404Component } from './error404/error404.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,11 @@ import { ChunkPipe } from './pipes/chunk.pipe';
     LoginComponent,
     MoviesComponent,
     UserComponent,
-    ChunkPipe
+    ChunkPipe,
+    NavbarComponent,
+    FavoritesComponent,
+    UsersComponent,
+    Error404Component
     
   ],
   imports: [

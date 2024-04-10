@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
         this.moviesSrv.getGenres().subscribe((data) => {
             this.genres = data;
         });
-        this.usersSrv.getavatars().subscribe((data) => {
+        this.usersSrv.getAvatars().subscribe((data) => {
             this.avatars = data;
         });
        

@@ -3,48 +3,35 @@ import {
     ActivatedRouteSnapshot,
     CanActivate,
     RouterStateSnapshot,
-    Router,
     UrlTree,
+    Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
+import { take, map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-    constructor(private router: Router) {}
-
+    constructor(private authSrv: AuthService, private router: Router) {}
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
-    ): boolean | UrlTree {
-        const user = localStorage.getItem('user');
-        const isLoggedIn = !!user;
-        const isLoginOrSignupRoute =
-            state.url === '/login' || state.url === '/signup';
-        const isMoviesOrUserRoute =
-            state.url === '/movies' || state.url.startsWith('/user/');
-        const isEmptyRoute = state.url === '';
-
-        if (isLoggedIn) {
-            if (isLoginOrSignupRoute) {
-                return this.router.createUrlTree(['/movies']);
-            }
-            if (isEmptyRoute) {
-                return this.router.createUrlTree(['/movies']);
-            }
-            if (isMoviesOrUserRoute) {
-                return true;
-            }
-        } else {
-            if (isMoviesOrUserRoute) {
+    ):
+        | Observable<boolean | UrlTree>
+        | Promise<boolean | UrlTree>
+        | boolean
+        | UrlTree {
+        return this.authSrv.user$.pipe(
+            take(1),
+            map((user) => {
+                if (user) {
+                    return true;
+                }
+                alert('Devi essere loggato per visualizzare questa risorsa!');
                 return this.router.createUrlTree(['/login']);
-            }
-            if (isLoginOrSignupRoute) {
-                return true;
-            }
-        }
-
-        return true;
+            })
+        );
     }
 }
