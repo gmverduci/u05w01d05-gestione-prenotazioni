@@ -1,3 +1,0 @@
-# CODICI LEZIONE UNIT1 SETTIMANA 3 GIORNO 1
-
-### 1. DOM traversing & DOM Manipulation
