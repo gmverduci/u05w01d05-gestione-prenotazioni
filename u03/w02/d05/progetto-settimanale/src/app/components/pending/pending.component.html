@@ -1,9 +1,0 @@
-<div class="container py-3">
-    <h1>Was it pleasure before duty or duty before pleasure? I can't recall.</h1>
-    <hr>
-    <app-navbar></app-navbar>
-
-</div>
-<div *ngFor="let todo of completedTodos">
-    <app-todo [todo]="todo" [user]="getUserById(todo.userId)!" (todoCompleted)="updateTodo($event)"></app-todo>
-  </div>
