@@ -1,0 +1,15 @@
+u05wo1d05/gestionePrenotazioni/repository/UtenteRepository.class
+u05wo1d05/gestionePrenotazioni/enums/TipoPostazione.class
+u05wo1d05/gestionePrenotazioni/service/UtenteService.class
+u05wo1d05/gestionePrenotazioni/service/PostazioneService.class
+u05wo1d05/gestionePrenotazioni/service/EdificioService.class
+u05wo1d05/gestionePrenotazioni/Runner.class
+u05wo1d05/gestionePrenotazioni/model/Edificio.class
+u05wo1d05/gestionePrenotazioni/repository/EdificioRepository.class
+u05wo1d05/gestionePrenotazioni/model/Postazione.class
+u05wo1d05/gestionePrenotazioni/model/Prenotazione.class
+u05wo1d05/gestionePrenotazioni/model/Utente.class
+u05wo1d05/gestionePrenotazioni/service/PrenotazioneService.class
+u05wo1d05/gestionePrenotazioni/repository/PostazioneRepository.class
+u05wo1d05/gestionePrenotazioni/repository/PrenotazioneRepository.class
+u05wo1d05/gestionePrenotazioni/GestionePrenotazioniApplication.class

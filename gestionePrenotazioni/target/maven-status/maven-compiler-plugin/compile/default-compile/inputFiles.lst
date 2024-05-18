@@ -1,0 +1,15 @@
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/model/Prenotazione.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/repository/PostazioneRepository.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/service/UtenteService.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/model/Utente.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/repository/EdificioRepository.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/enums/TipoPostazione.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/model/Postazione.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/Runner.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/repository/UtenteRepository.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/service/PrenotazioneService.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/service/PostazioneService.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/service/EdificioService.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/model/Edificio.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/GestionePrenotazioniApplication.java
+/Users/mv/Desktop/FS0124IT-A/backend/u05/w01/d05/gestionePrenotazioni/src/main/java/u05wo1d05/gestionePrenotazioni/repository/PrenotazioneRepository.java
