@@ -10,6 +10,7 @@ import u05wo1d05.gestionePrenotazioni.model.*;
 import u05wo1d05.gestionePrenotazioni.service.*;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -41,6 +42,7 @@ public class Runner implements CommandLineRunner {
 
             System.out.println("--------------------------");
             System.out.println("4 - Nuova prenotazione");
+            System.out.println("10 - Cerca postazioni per Tipo e Città");
             System.out.println("--------------------------");
             System.out.println("--- ELENCO ENTITIES ---");
             System.out.println("5 - Elenco utenti");
@@ -82,6 +84,9 @@ public class Runner implements CommandLineRunner {
                     System.out.println("Uscita dall'applicazione.");
                     scanner.close();
                     return;
+                case 10:
+                    cercaPostazioniPerTipoECitta();
+                    break;
                 default:
                     System.out.println("Opzione non valida. Prova di nuovo.");
             }
@@ -174,9 +179,9 @@ public class Runner implements CommandLineRunner {
         String citta = scanner.nextLine();
 
         Edificio nuovoEdificio = new Edificio();
-        nuovoEdificio.setNome(nome);
-        nuovoEdificio.setIndirizzo(indirizzo);
-        nuovoEdificio.setCitta(citta);
+        nuovoEdificio.setNome(nome.toLowerCase());
+        nuovoEdificio.setIndirizzo(indirizzo.toLowerCase());
+        nuovoEdificio.setCitta(citta.toLowerCase());
 
         edificioService.save(nuovoEdificio);
 
@@ -206,13 +211,17 @@ public class Runner implements CommandLineRunner {
         scanner.nextLine();
         Date data = Date.valueOf(dataString);
 
+        // l'utente ha già una prenotazione per questa data?
         boolean hasReservation = prenotazioneService.hasUserReservedPostationForDate(utente.getUsername(), data);
         if (hasReservation) {
             System.out.println("L'utente ha già una prenotazione per questa data.");
             return;
         }
 
-        boolean isAvailable = postazioneService.isAvailableByDate(postazione.getId(), data);
+        int maxOccupanti = postazione.getNumeroMassimoOccupanti();
+
+        // la postazione ha già raggiunto il numero massimo di occupanti per questa data
+        boolean isAvailable = postazioneService.isAvailableByDate(postazione.getId(), data, maxOccupanti);
         if (!isAvailable) {
             System.out.println("La postazione non è disponibile per questa data.");
             return;
@@ -227,6 +236,7 @@ public class Runner implements CommandLineRunner {
 
         System.out.println("Prenotazione creata con successo!");
     }
+
 
 
     private void elencaUtenti() {
@@ -256,6 +266,52 @@ public class Runner implements CommandLineRunner {
             System.out.println("ID: " + prenotazione.getId() + ", Utente: " + prenotazione.getUtente().getUsername() + ", Postazione: " + prenotazione.getPostazione().getCodiceUnivoco() + ", Data: " + prenotazione.getData());
         });
     }
+
+    private void cercaPostazioniPerTipoECitta() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ricerca postazioni per tipo e città.");
+
+        System.out.print("Inserisci il tipo di postazione (PRIVATO, OPEN_SPACE, SALA_RIUNIONI): ");
+        String tipoString = scanner.nextLine().toLowerCase().replaceAll("\\s+", "");
+
+        String tipo = null;
+        switch (tipoString) {
+            case "privato":
+                tipo = "PRIVATO";
+                break;
+            case "openspace":
+            case "open_space":
+            case "open space":
+                tipo = "OPEN_SPACE";
+                break;
+            case "salariunioni":
+            case "sala_riunioni":
+            case "sala riunioni":
+                tipo = "SALA_RIUNIONI";
+                break;
+            default:
+                System.out.println("Tipo non valido. I tipi validi sono: PRIVATO, OPEN_SPACE, SALA_RIUNIONI.");
+                return;
+        }
+
+        System.out.print("Inserisci la città: ");
+        String citta = scanner.nextLine();
+
+        List<Postazione> postazioni = postazioneService.findPostazioniByTipoAndCitta(tipo, citta);
+
+        if (postazioni.isEmpty()) {
+            System.out.println("Non ci sono postazioni disponibili per il tipo '" + tipo + "' nella città '" + citta + "'.");
+        } else {
+            System.out.println("Postazioni trovate:");
+            for (Postazione postazione : postazioni) {
+                System.out.println("ID: " + postazione.getId() + ", Codice Univoco: " + postazione.getCodiceUnivoco() + ", Descrizione: " + postazione.getDescrizione() + ", Tipo: " + postazione.getTipo() + ", Numero Massimo Occupanti: " + postazione.getNumeroMassimoOccupanti() + ", Edificio: " + postazione.getEdificio().getNome());
+            }
+        }
+    }
+
+
+
 }
 
 

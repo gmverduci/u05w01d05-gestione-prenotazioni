@@ -18,11 +18,11 @@ public class Prenotazione {
     private Long id;
     private Date data;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "postazione_id")
     private Postazione postazione;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "utente_id")
     private Utente utente;
 }

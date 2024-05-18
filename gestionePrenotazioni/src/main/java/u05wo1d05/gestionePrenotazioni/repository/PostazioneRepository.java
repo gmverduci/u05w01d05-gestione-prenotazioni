@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 public interface PostazioneRepository extends JpaRepository<Postazione, Long> {
     List<Postazione> findAll();
@@ -17,9 +16,13 @@ public interface PostazioneRepository extends JpaRepository<Postazione, Long> {
 
     void deleteById(Long id);
 
-    @Query("SELECT p FROM Postazione p WHERE p.tipo = :tipo AND p.numeroMassimoOccupanti >= (SELECT COUNT(r) FROM Prenotazione r WHERE r.postazione.id = p.id AND r.data <= :data)")
-    List<Postazione> findAvailablePostationsByTypeAndDate(@Param("tipo") TipoPostazione tipo, @Param("data") Date data);
 
-    @Query("SELECT CASE WHEN COUNT(r) > 0 THEN false ELSE true END FROM Prenotazione r WHERE r.postazione.id = :postId AND r.data <= :date")
-    boolean isAvailableByDate(@Param("postId") Long postId, @Param("date") Date date);
+    @Query("SELECT CASE WHEN COUNT(r) >= :maxOccupanti THEN false ELSE true END FROM Prenotazione r WHERE r.postazione.id = :postId AND r.data = :date")
+    boolean isAvailableByDate(@Param("postId") Long postId, @Param("date") Date date, @Param("maxOccupanti") int maxOccupanti);
+
+
+    @Query("SELECT p FROM Postazione p JOIN p.edificio e WHERE LOWER(p.tipo) = :tipo AND LOWER(e.citta) = :citta")
+    List<Postazione> findByTipoAndCitta(@Param("tipo") String tipo, @Param("citta") String citta);
+
+
 }

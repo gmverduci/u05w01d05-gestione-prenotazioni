@@ -19,4 +19,6 @@ public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long
     // controllo: utente prenota postazione: ha già una prenotazione per quella data?
     @Query("SELECT CASE WHEN COUNT(r) > 0 THEN true ELSE false END FROM Prenotazione r WHERE r.utente.username = :username AND r.data <= :date")
     boolean hasUserReservedPostationForDate(@Param("username") String username, @Param("date") Date date);
+
+
 }

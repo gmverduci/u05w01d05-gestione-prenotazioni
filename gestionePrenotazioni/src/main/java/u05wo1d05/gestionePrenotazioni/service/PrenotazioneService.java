@@ -1,6 +1,7 @@
 package u05wo1d05.gestionePrenotazioni.service;
 
 import org.springframework.stereotype.Service;
+import u05wo1d05.gestionePrenotazioni.model.Postazione;
 import u05wo1d05.gestionePrenotazioni.model.Prenotazione;
 import u05wo1d05.gestionePrenotazioni.repository.PrenotazioneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ public class PrenotazioneService {
     @Autowired
     private PrenotazioneRepository prenotazioneRepository;
 
+    @Autowired
+    private PostazioneService postazioneService;
+
     public List<Prenotazione> findAll() {
         return prenotazioneRepository.findAll();
     }
@@ -22,7 +26,10 @@ public class PrenotazioneService {
     }
 
     public Prenotazione save(Prenotazione prenotazione) {
-        return prenotazioneRepository.save(prenotazione);
+        Prenotazione savedPrenotazione = prenotazioneRepository.save(prenotazione);
+        Postazione postazione = savedPrenotazione.getPostazione();
+        postazioneService.save(postazione);
+        return savedPrenotazione;
     }
 
     public void delete(Long id) {
@@ -32,4 +39,6 @@ public class PrenotazioneService {
     public boolean hasUserReservedPostationForDate(String username, Date date) {
         return prenotazioneRepository.hasUserReservedPostationForDate(username, date);
     }
+
+
 }
